@@ -1,6 +1,6 @@
 import About from '@/components/sections/about';
 import Contact from '@/components/sections/contact';
-import Features from '@/components/sections/features';
+import Services from '@/components/sections/services';
 import Hero from '@/components/sections/hero';
 import Industries from '@/components/sections/industries';
 import Testimonials from '@/components/sections/testimonials';
@@ -14,7 +14,7 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <About />
-        <Features />
+        <Services />
         <Industries />
         <Testimonials />
         <Contact />
