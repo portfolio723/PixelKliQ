@@ -13,7 +13,7 @@ export default function Services() {
           <p className="mt-4 text-muted-foreground">We provide a wide range of digital services to help your business grow.</p>
         </div>
         <div className="mx-auto mt-8 grid grid-cols-1 justify-center gap-6 sm:grid-cols-2 md:grid-cols-3 lg:max-w-full">
-          <Card className="group border-0 bg-muted shadow-none text-center">
+          <Card className="group border-0 bg-muted shadow-none">
             <CardHeader className="pb-3">
               <CardDecorator>
                 <Zap className="size-6" aria-hidden />
@@ -30,7 +30,7 @@ export default function Services() {
             </CardContent>
           </Card>
 
-          <Card className="group border-0 bg-muted shadow-none text-center">
+          <Card className="group border-0 bg-muted shadow-none">
             <CardHeader className="pb-3">
               <CardDecorator>
                 <Settings2 className="size-6" aria-hidden />
@@ -47,7 +47,7 @@ export default function Services() {
             </CardContent>
           </Card>
 
-          <Card className="group border-0 bg-muted shadow-none text-center">
+          <Card className="group border-0 bg-muted shadow-none">
             <CardHeader className="pb-3">
               <CardDecorator>
                 <Sparkles className="size-6" aria-hidden />
@@ -64,7 +64,7 @@ export default function Services() {
             </CardContent>
           </Card>
           
-          <Card className="group border-0 bg-muted shadow-none text-center">
+          <Card className="group border-0 bg-muted shadow-none">
             <CardHeader className="pb-3">
               <CardDecorator>
                 <ShieldCheck className="size-6" aria-hidden />
@@ -80,7 +80,7 @@ export default function Services() {
             </CardContent>
           </Card>
 
-          <Card className="group border-0 bg-muted shadow-none text-center">
+          <Card className="group border-0 bg-muted shadow-none">
             <CardHeader className="pb-3">
               <CardDecorator>
                 <LifeBuoy className="size-6" aria-hidden />
