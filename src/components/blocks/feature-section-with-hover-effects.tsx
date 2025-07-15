@@ -1,3 +1,4 @@
+
 import { cn } from "@/lib/utils";
 import {
   IconAdjustmentsBolt,
@@ -9,6 +10,7 @@ import {
   IconRouteAltLeft,
   IconTerminal2,
 } from "@tabler/icons-react";
+import { Button } from "@/components/ui/button";
 
 export function FeaturesSectionWithHoverEffects() {
   const features = [
@@ -17,28 +19,33 @@ export function FeaturesSectionWithHoverEffects() {
       description:
         "Built for engineers, developers, dreamers, thinkers and doers.",
       icon: <IconTerminal2 />,
+      link: "#",
     },
     {
       title: "Ease of use",
       description:
         "It's as easy as using an Apple, and as expensive as buying one.",
       icon: <IconEaseInOut />,
+      link: "#",
     },
     {
       title: "Pricing like no other",
       description:
         "Our prices are best in the market. No cap, no lock, no credit card required.",
       icon: <IconCurrencyDollar />,
+      link: "#",
     },
     {
       title: "100% Uptime guarantee",
       description: "We just cannot be taken down by anyone.",
       icon: <IconCloud />,
+      link: "#",
     },
     {
       title: "Multi-tenant Architecture",
       description: "You can simply share passwords instead of buying new seats",
       icon: <IconRouteAltLeft />,
+      link: "#",
     },
   ];
   return (
@@ -67,11 +74,13 @@ const Feature = ({
   description,
   icon,
   index,
+  link,
 }: {
   title: string;
   description: string;
   icon: React.ReactNode;
   index: number;
+  link: string;
 }) => {
   return (
     <div
@@ -94,6 +103,11 @@ const Feature = ({
       <p className="text-sm text-neutral-600 dark:text-neutral-300 max-w-xs relative z-10 px-10">
         {description}
       </p>
+      <div className="relative z-10 mt-4 px-10 opacity-0 group-hover/feature:opacity-100 transition-opacity duration-300">
+        <Button variant="secondary" asChild>
+          <a href={link}>Learn More</a>
+        </Button>
+      </div>
     </div>
   );
 };
