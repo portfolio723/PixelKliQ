@@ -3,7 +3,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRightIcon } from "lucide-react";
+import { ArrowRightIcon, ArrowRight } from "lucide-react";
 import { Mockup, MockupFrame } from "@/components/ui/mockup";
 import { Glow } from "@/components/ui/glow";
 import Image from "next/image";
@@ -14,7 +14,7 @@ interface HeroAction {
   text: string;
   href: string;
   icon?: React.ReactNode;
-  variant?: "default" | "secondary" | "destructive" | "outline" | "ghost" | "link" | "glow";
+  variant?: "default" | "secondary" | "destructive" | "outline" | "ghost" | "glow";
 }
 
 interface HeroProps {
@@ -49,11 +49,10 @@ export function HeroSection({
     <section
       className={cn(
         "bg-background text-foreground",
-        "py-12 sm:py-16 md:py-20 px-4",
-        "overflow-hidden"
+        "relative overflow-hidden py-8 sm:py-12 md:py-16 px-4"
       )}
     >
-      <div className="mx-auto flex max-w-7xl flex-col gap-12 sm:gap-24">
+      <div className="mx-auto flex max-w-7xl flex-col gap-12 sm:gap-16 pt-8">
         <div className="flex flex-col items-center gap-6 text-center sm:gap-12">
           {badge && (
             <Badge variant="outline" className="animate-appear gap-2">
@@ -65,7 +64,7 @@ export function HeroSection({
             </Badge>
           )}
 
-          <h1 className="relative z-10 inline-block animate-appear bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-3xl font-semibold leading-tight text-transparent drop-shadow-2xl sm:text-5xl sm:leading-tight md:text-6xl md:leading-tight">
+          <h1 className="relative z-10 inline-block animate-appear bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-3xl font-semibold leading-tight text-transparent drop-shadow-2xl sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
             {title}
           </h1>
 
@@ -85,6 +84,14 @@ export function HeroSection({
               ))}
             </div>
           </div>
+          
+          <div className="relative w-full h-24">
+             <Glow
+              variant="center"
+              className="animate-appear-zoom opacity-0 delay-1000"
+            />
+          </div>
+
         </div>
       </div>
     </section>
