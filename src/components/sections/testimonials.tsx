@@ -48,6 +48,11 @@ const AnimatedTestimonials = ({
   className?: string;
 }) => {
   const [active, setActive] = useState(0);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const handleNext = () => {
     setActive((prev) => (prev + 1) % testimonials.length);
@@ -66,9 +71,10 @@ const AnimatedTestimonials = ({
       const interval = setInterval(handleNext, 5000);
       return () => clearInterval(interval);
     }
-  }, [autoplay, handleNext]);
+  }, [autoplay, testimonials.length]);
 
   const randomRotateY = () => {
+    if (!isClient) return 0;
     return Math.floor(Math.random() * 21) - 10;
   };
 
