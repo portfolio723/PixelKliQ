@@ -4,6 +4,18 @@ import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
 import { ThemeProvider } from 'next-themes';
+import { Inter, Source_Code_Pro } from 'next/font/google';
+import { cn } from '@/lib/utils';
+
+const fontBody = Inter({
+  subsets: ['latin'],
+  variable: '--font-body',
+});
+
+const fontCode = Source_Code_Pro({
+  subsets: ['latin'],
+  variable: '--font-code',
+});
 
 // Note: Metadata is not supported in client components.
 // We can move this to a server component if needed, but for now we'll keep it simple.
@@ -22,11 +34,8 @@ export default function RootLayout({
       <head>
         <title>PixelKliQ HQ - Modern Digital Solutions</title>
         <meta name="description" content="PixelKliQ offers cutting-edge digital solutions in Hyderabad, from creative design to tech development. Partner with us to elevate your brand." />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Code+Pro&display=swap" rel="stylesheet" />
       </head>
-      <body className="font-body antialiased">
+      <body className={cn("font-body antialiased", fontBody.variable, fontCode.variable)}>
         <ThemeProvider
             attribute="class"
             defaultTheme="dark"

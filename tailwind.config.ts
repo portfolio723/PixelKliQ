@@ -13,9 +13,9 @@ export default {
         container: "1280px",
       },
       fontFamily: {
-        body: ['Inter', 'sans-serif'],
-        headline: ['Inter', 'sans-serif'],
-        code: ['"Source Code Pro"', 'monospace'],
+        body: ['var(--font-body)', 'sans-serif'],
+        headline: ['var(--font-body)', 'sans-serif'],
+        code: ['var(--font-code)', 'monospace'],
       },
       colors: {
         background: 'hsl(var(--background))',
