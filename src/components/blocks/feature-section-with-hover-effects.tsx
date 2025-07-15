@@ -1,14 +1,11 @@
 
 import { cn } from "@/lib/utils";
 import {
-  IconAdjustmentsBolt,
-  IconCloud,
-  IconCurrencyDollar,
-  IconEaseInOut,
-  IconHeart,
-  IconHelp,
-  IconRouteAltLeft,
-  IconTerminal2,
+  IconPalette,
+  IconServerCog,
+  IconSchool,
+  IconUsers,
+  IconPhone,
 } from "@tabler/icons-react";
 import { Button } from "@/components/ui/button";
 
@@ -18,32 +15,32 @@ export function FeaturesSectionWithHoverEffects() {
       title: "PixelKLiQ Creatives",
       description:
         "Logo Design, Website Dev, UI/UX, Social Media Creatives, SEO.",
-      icon: <IconTerminal2 />,
+      icon: <IconPalette />,
       link: "#",
     },
     {
       title: "PixelKLiQ Solutions",
       description:
         "SaaS, ERP, CRM, API Integration, DevOps.",
-      icon: <IconEaseInOut />,
+      icon: <IconServerCog />,
       link: "#",
     },
     {
       title: "PixelKLiQ Edutech",
       description:"Internships, Courses, Workshops.",
-      icon: <IconCurrencyDollar />,
+      icon: <IconSchool />,
       link: "#",
     },
     {
       title: "PixelKLiQ HR Services",
       description: "Recruitment, Payroll, Virtual HR.",
-      icon: <IconCloud />,
+      icon: <IconUsers />,
       link: "#",
     },
     {
       title: "PixelKLiQ Tele Services",
       description: "Call Center Setup, CRM, Support, Lead Gen.",
-      icon: <IconRouteAltLeft />,
+      icon: <IconPhone />,
       link: "#",
     },
   ];
