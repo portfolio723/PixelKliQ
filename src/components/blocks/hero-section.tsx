@@ -7,6 +7,7 @@ import { ArrowRightIcon } from "lucide-react";
 import { Mockup, MockupFrame } from "@/components/ui/mockup";
 import { Glow } from "@/components/ui/glow";
 import Image from "next/image";
+import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
 
 interface HeroAction {
@@ -41,17 +42,18 @@ export function HeroSection({
   actions,
   image,
 }: HeroProps) {
-  const imageSrc = image.light;
+  const { resolvedTheme } = useTheme();
+  const imageSrc = resolvedTheme === "light" ? image.light : image.dark;
 
   return (
     <section
       className={cn(
         "bg-background text-foreground",
-        "py-12 sm:py-24 md:py-32 px-4",
+        "py-12 sm:py-16 md:py-20 px-4",
         "overflow-hidden"
       )}
     >
-      <div className="mx-auto flex max-w-7xl flex-col gap-12 pt-16 sm:gap-24">
+      <div className="mx-auto flex max-w-7xl flex-col gap-12 sm:gap-24">
         <div className="flex flex-col items-center gap-6 text-center sm:gap-12">
           {badge && (
             <Badge variant="outline" className="animate-appear gap-2">
@@ -91,7 +93,7 @@ export function HeroSection({
             >
               <Mockup type="responsive">
                 <Image
-                  src={imageSrc}
+                  src={imageSrc ?? 'https://placehold.co/1248x765.png'}
                   alt={image.alt}
                   width={1248}
                   height={765}
