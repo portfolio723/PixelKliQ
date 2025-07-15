@@ -1,7 +1,7 @@
 'use client';
 
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
-import { Check, ChevronRight, Link as LinkIcon } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import { forwardRef, type ComponentPropsWithoutRef, useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 
@@ -71,7 +71,6 @@ export const Accordion = forwardRef<
           />
           {title}
         </AccordionPrimitive.Trigger>
-        {id ? <CopyButton id={id} /> : null}
       </AccordionPrimitive.Header>
       <AccordionPrimitive.Content 
         className="overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
@@ -82,37 +81,5 @@ export const Accordion = forwardRef<
   );
 });
 
-function CopyButton({ id }: { id: string }): React.ReactElement {
-  const [copied, setCopied] = useState(false);
-
-  const onClick = () => {
-    const url = new URL(window.location.href);
-    url.hash = id;
-    navigator.clipboard.writeText(url.toString());
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
-  return (
-    <button
-      type="button"
-      aria-label="Copy Link"
-      className={cn(
-        "inline-flex h-8 w-8 items-center justify-center rounded-md p-2 text-sm font-medium",
-        "transition-colors duration-100",
-        "hover:bg-accent hover:text-accent-foreground",
-        "text-muted-foreground me-2",
-        "disabled:pointer-events-none disabled:opacity-50"
-      )}
-      onClick={onClick}
-    >
-      {copied ? (
-        <Check className="h-3.5 w-3.5" />
-      ) : (
-        <LinkIcon className="h-3.5 w-3.5" />
-      )}
-    </button>
-  );
-}
 
 Accordion.displayName = 'Accordion';
