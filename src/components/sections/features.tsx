@@ -160,19 +160,19 @@ export default function Features() {
                                         <div className="relative flex w-[calc(50%+0.875rem)] items-center justify-end gap-2">
                                             <span className="block h-fit rounded border px-2 py-1 text-xs shadow-sm">Likeur</span>
                                             <div className="ring-background size-7 ring-4">
-                                                <Image width={28} height={28} className="size-full rounded-full" src="https://placehold.co/28x28.png" alt="Avatar" data-ai-hint="woman portrait" />
+                                                <Image width={28} height={28} className="size-full rounded-full" src="https://placehold.co/28x28" alt="Avatar" />
                                             </div>
                                         </div>
                                         <div className="relative ml-[calc(50%-1rem)] flex items-center gap-2">
                                             <div className="ring-background size-8 ring-4">
-                                                 <Image width={32} height={32} className="size-full rounded-full" src="https://placehold.co/32x32.png" alt="Avatar" data-ai-hint="man portrait" />
+                                                <Image width={32} height={32} className="size-full rounded-full" src="https://placehold.co/32x32" alt="Avatar" />
                                             </div>
                                             <span className="block h-fit rounded border px-2 py-1 text-xs shadow-sm">M. Irung</span>
                                         </div>
                                         <div className="relative flex w-[calc(50%+0.875rem)] items-center justify-end gap-2">
                                             <span className="block h-fit rounded border px-2 py-1 text-xs shadow-sm">B. Ng</span>
                                             <div className="ring-background size-7 ring-4">
-                                                <Image width={28} height={28} className="size-full rounded-full" src="https://placehold.co/28x28.png" alt="Avatar" data-ai-hint="woman face" />
+                                                <Image width={28} height={28} className="size-full rounded-full" src="https://placehold.co/28x28" alt="Avatar" />
                                             </div>
                                         </div>
                                     </div>
@@ -183,5 +183,7 @@ export default function Features() {
                 </div>
             </div>
         </section>
-    )
+     )
 }
+
+  
