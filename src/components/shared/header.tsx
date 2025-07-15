@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { Menu, Zap } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -121,9 +121,13 @@ export default function Header() {
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
                 <Menu className="h-6 w-6" />
+                <span className="sr-only">Open Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[280px]">
+            <SheetContent side="right" className="w-[280px] p-0">
+               <SheetHeader className="p-6 pb-0">
+                  <SheetTitle className="sr-only">Mobile Navigation Menu</SheetTitle>
+                </SheetHeader>
               <div className="p-6 h-full flex flex-col">
                 <Link href="#home" className="flex items-center gap-2 mb-8">
                   <Zap className="h-7 w-7 text-primary" />
