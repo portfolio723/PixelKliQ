@@ -15,35 +15,34 @@ import { Button } from "@/components/ui/button";
 export function FeaturesSectionWithHoverEffects() {
   const features = [
     {
-      title: "Built for developers",
+      title: "PixelKLiQ Creatives",
       description:
-        "Built for engineers, developers, dreamers, thinkers and doers.",
+        "Logo Design, Website Dev, UI/UX, Social Media Creatives, SEO.",
       icon: <IconTerminal2 />,
       link: "#",
     },
     {
-      title: "Ease of use",
+      title: "PixelKLiQ Solutions",
       description:
-        "It's as easy as using an Apple, and as expensive as buying one.",
+        "SaaS, ERP, CRM, API Integration, DevOps.",
       icon: <IconEaseInOut />,
       link: "#",
     },
     {
-      title: "Pricing like no other",
-      description:
-        "Our prices are best in the market. No cap, no lock, no credit card required.",
+      title: "PixelKLiQ Edutech",
+      description:"Internships, Courses, Workshops.",
       icon: <IconCurrencyDollar />,
       link: "#",
     },
     {
-      title: "100% Uptime guarantee",
-      description: "We just cannot be taken down by anyone.",
+      title: "PixelKLiQ HR Services",
+      description: "Recruitment, Payroll, Virtual HR.",
       icon: <IconCloud />,
       link: "#",
     },
     {
-      title: "Multi-tenant Architecture",
-      description: "You can simply share passwords instead of buying new seats",
+      title: "PixelKLiQ Tele Services",
+      description: "Call Center Setup, CRM, Support, Lead Gen.",
       icon: <IconRouteAltLeft />,
       link: "#",
     },
