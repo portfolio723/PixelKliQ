@@ -56,24 +56,6 @@ const Counter = ({ value, duration = 2000 }: { value: number, duration?: number 
   return <span ref={ref} className="text-4xl font-bold text-primary">{count}+</span>;
 };
 
-const stats = [
-    {
-      value: 50,
-      label: "Happy Clients",
-      icon: <Users className="w-8 h-8 text-primary" />,
-    },
-    {
-      value: 120,
-      label: "Projects Completed",
-      icon: <FolderKanban className="w-8 h-8 text-primary" />,
-    },
-    {
-      value: 15,
-      label: "Industries Served",
-      icon: <Building2 className="w-8 h-8 text-primary" />,
-    },
-];
-
 const coreValues = [
     {
         title: "Our Mission",
@@ -105,7 +87,7 @@ export default function About() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-3xl mx-auto">
             <div className="space-y-8">
                 {coreValues.map((value) => (
                     <div key={value.title} className="flex items-start gap-4">
@@ -117,17 +99,6 @@ export default function About() {
                             <p className="mt-1 text-muted-foreground">{value.description}</p>
                         </div>
                     </div>
-                ))}
-            </div>
-             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                {stats.map((stat, index) => (
-                <Card key={index} className="text-center p-6 bg-background/50 border-border/50">
-                    <CardContent className="p-0 flex flex-col items-center gap-2">
-                        {stat.icon}
-                        <Counter value={stat.value} />
-                        <p className="text-muted-foreground font-medium">{stat.label}</p>
-                    </CardContent>
-                </Card>
                 ))}
             </div>
         </div>
