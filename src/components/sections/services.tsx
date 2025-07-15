@@ -7,13 +7,13 @@ import { ReactNode } from 'react';
 export default function Services() {
   return (
     <section id="services" className="py-16 sm:py-24">
-      <div className="@container mx-auto max-w-5xl px-6">
+      <div className="container mx-auto max-w-5xl px-6">
         <div className="text-center">
           <h2 className="text-balance text-4xl font-headline font-semibold lg:text-5xl">Our Services</h2>
           <p className="mt-4 text-muted-foreground">We provide a wide range of digital services to help your business grow.</p>
         </div>
-        <div className="mx-auto mt-8 grid max-w-sm justify-center gap-6 *:text-center @[480px]:grid-cols-2 @[768px]:max-w-full @[768px]:grid-cols-3 md:mt-16">
-          <Card className="group border-0 bg-muted shadow-none">
+        <div className="mx-auto mt-8 grid grid-cols-1 justify-center gap-6 sm:grid-cols-2 md:grid-cols-3 lg:max-w-full">
+          <Card className="group border-0 bg-muted shadow-none text-center">
             <CardHeader className="pb-3">
               <CardDecorator>
                 <Zap className="size-6" aria-hidden />
@@ -30,7 +30,7 @@ export default function Services() {
             </CardContent>
           </Card>
 
-          <Card className="group border-0 bg-muted shadow-none">
+          <Card className="group border-0 bg-muted shadow-none text-center">
             <CardHeader className="pb-3">
               <CardDecorator>
                 <Settings2 className="size-6" aria-hidden />
@@ -47,7 +47,7 @@ export default function Services() {
             </CardContent>
           </Card>
 
-          <Card className="group border-0 bg-muted shadow-none">
+          <Card className="group border-0 bg-muted shadow-none text-center">
             <CardHeader className="pb-3">
               <CardDecorator>
                 <Sparkles className="size-6" aria-hidden />
@@ -64,7 +64,7 @@ export default function Services() {
             </CardContent>
           </Card>
           
-          <Card className="group border-0 bg-muted shadow-none">
+          <Card className="group border-0 bg-muted shadow-none text-center">
             <CardHeader className="pb-3">
               <CardDecorator>
                 <ShieldCheck className="size-6" aria-hidden />
@@ -80,7 +80,7 @@ export default function Services() {
             </CardContent>
           </Card>
 
-          <Card className="group border-0 bg-muted shadow-none">
+          <Card className="group border-0 bg-muted shadow-none text-center">
             <CardHeader className="pb-3">
               <CardDecorator>
                 <LifeBuoy className="size-6" aria-hidden />
