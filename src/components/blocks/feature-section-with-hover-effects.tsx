@@ -52,11 +52,6 @@ export function FeaturesSectionWithHoverEffects() {
         "If you donot like EveryAI, we will convince you to like us.",
       icon: <IconAdjustmentsBolt />,
     },
-    {
-      title: "And everything else",
-      description: "I just ran out of copy ideas. Accept my sincere apologies",
-      icon: <IconHeart />,
-    },
   ];
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-10 max-w-7xl mx-auto">
