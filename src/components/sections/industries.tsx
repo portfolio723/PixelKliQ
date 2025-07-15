@@ -1,65 +1,98 @@
-import Image from "next/image";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import { Card, CardContent } from "@/components/ui/card";
+"use client";
 
-const industries = [
-  { name: "TechCorp", logo: "https://placehold.co/150x60.png", dataAiHint: "tech company logo" },
-  { name: "HealthWell", logo: "https://placehold.co/150x60.png", dataAiHint: "healthcare company logo" },
-  { name: "FinancePro", logo: "https://placehold.co/150x60.png", dataAiHint: "finance company logo" },
-  { name: "EduGreat", logo: "https://placehold.co/150x60.png", dataAiHint: "education company logo" },
-  { name: "RetailRift", logo: "https://placehold.co/150x60.png", dataAiHint: "retail company logo" },
-  { name: "EstateEase", logo: "https://placehold.co/150x60.png", dataAiHint: "real estate logo" },
-  { name: "FoodieFiesta", logo: "https://placehold.co/150x60.png", dataAiHint: "food industry logo" },
+import { cn } from "@/lib/utils";
+import { Building, HeartPulse, GraduationCap, LandPlot, Utensils, ShoppingCart, Briefcase } from "lucide-react";
+import React from "react";
+
+interface DisplayCardProps {
+  className?: string;
+  icon?: React.ReactNode;
+  title?: string;
+  description?: string;
+}
+
+function DisplayCard({
+  className,
+  icon = <Briefcase className="size-4 text-primary" />,
+  title = "Tech",
+  description = "Innovative tech solutions",
+}: DisplayCardProps) {
+  return (
+    <div
+      className={cn(
+        "relative flex h-36 w-[22rem] -skew-y-[8deg] select-none flex-col justify-between rounded-xl border-2 border-border bg-muted/70 p-4 backdrop-blur-sm transition-all duration-700 after:absolute after:-right-1 after:top-[-5%] after:h-[110%] after:w-[20rem] after:bg-gradient-to-l after:from-background after:to-transparent after:content-[''] hover:border-primary/50 hover:bg-muted [&>*]:flex [&>*]:items-center [&>*]:gap-3",
+        className
+      )}
+    >
+      <div className="flex items-center gap-3">
+        <span className="relative inline-block rounded-full bg-primary/20 p-2 text-primary">
+          {icon}
+        </span>
+        <p className="text-lg font-semibold text-foreground">{title}</p>
+      </div>
+      <p className="whitespace-nowrap text-lg text-muted-foreground">{description}</p>
+    </div>
+  );
+}
+
+interface DisplayCardsProps {
+  cards: DisplayCardProps[];
+}
+
+function DisplayCards({ cards }: DisplayCardsProps) {
+  return (
+    <div className="grid h-72 [grid-template-areas:'stack'] place-items-center opacity-100 animate-in fade-in-0 duration-700">
+      {cards.map((cardProps, index) => (
+        <DisplayCard key={index} {...cardProps} />
+      ))}
+    </div>
+  );
+}
+
+
+const industryCards: DisplayCardProps[] = [
+    { 
+        title: "Technology", 
+        description: "SaaS, ERP & App Development", 
+        icon: <Briefcase className="size-5" />,
+        className: "[grid-area:stack] hover:-translate-y-10"
+    },
+    { 
+        title: "Healthcare", 
+        description: "Clinic Management & Telemedicine", 
+        icon: <HeartPulse className="size-5" />,
+        className: "[grid-area:stack] translate-x-12 translate-y-10 hover:-translate-y-1"
+    },
+    { 
+        title: "Education", 
+        description: "E-learning Platforms & Edutech", 
+        icon: <GraduationCap className="size-5" />,
+        className: "[grid-area:stack] translate-x-24 translate-y-20 hover:translate-y-10"
+    },
+     { 
+        title: "Real Estate", 
+        description: "CRM & Property Portals", 
+        icon: <LandPlot className="size-5" />,
+        className: "[grid-area:stack] translate-x-36 translate-y-30 hover:translate-y-20",
+    },
 ];
+
 
 export default function Industries() {
   return (
     <section id="industries" className="py-16 sm:py-24 bg-card/50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <div className="text-center mb-24">
           <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">
             Industries We Serve
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-            We&apos;ve partnered with a diverse range of clients to deliver exceptional results.
+            We&apos;ve partnered with a diverse range of clients to deliver exceptional results across various sectors.
           </p>
         </div>
-        <Carousel
-          opts={{
-            align: "start",
-            loop: true,
-          }}
-          className="w-full max-w-6xl mx-auto"
-        >
-          <CarouselContent>
-            {industries.map((industry, index) => (
-              <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/5">
-                <div className="p-1">
-                  <Card className="bg-transparent border-0 shadow-none">
-                    <CardContent className="flex aspect-square items-center justify-center p-6">
-                      <Image
-                        src={industry.logo}
-                        alt={`${industry.name} logo`}
-                        width={150}
-                        height={60}
-                        data-ai-hint={industry.dataAiHint}
-                        className="filter grayscale hover:grayscale-0 transition-all duration-300"
-                      />
-                    </CardContent>
-                  </Card>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
+        <div className="flex items-center justify-center">
+             <DisplayCards cards={industryCards} />
+        </div>
       </div>
     </section>
   );
