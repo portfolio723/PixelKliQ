@@ -1,0 +1,36 @@
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+
+export default function Hero() {
+  return (
+    <section id="home" className="relative h-[calc(100dvh-5rem)] min-h-[600px] flex items-center justify-center text-center text-white overflow-hidden">
+      <div className="absolute inset-0 z-[-1]">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('https://placehold.co/1920x1080.png')", filter: 'brightness(0.3)' }}
+          data-ai-hint="abstract digital cityscape"
+        ></div>
+        <div className="absolute inset-0 bg-black/50"></div>
+      </div>
+      <div className="container mx-auto px-4 z-10">
+        <h1 className="text-4xl md:text-6xl font-headline font-extrabold tracking-tighter mb-4 text-shadow-lg">
+          We Build Digital Experiences
+        </h1>
+        <p className="max-w-3xl mx-auto text-lg md:text-xl text-slate-300 mb-8">
+          PixelKliQ is a premier digital agency in Hyderabad, specializing in innovative solutions that elevate brands and engage audiences. Let&apos;s create something amazing together.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button asChild size="lg" className="font-bold text-base uppercase tracking-wider">
+            <a href="#services">
+              Explore Services
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </a>
+          </Button>
+          <Button asChild size="lg" variant="secondary" className="font-bold text-base uppercase tracking-wider">
+            <a href="#contact">Book Free Consultation</a>
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+}
