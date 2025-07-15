@@ -12,7 +12,7 @@ export default function Services() {
           <h2 className="text-balance text-4xl font-headline font-semibold lg:text-5xl">Our Services</h2>
           <p className="mt-4 text-muted-foreground">We provide a wide range of digital services to help your business grow.</p>
         </div>
-        <div className="mx-auto mt-8 grid max-w-sm gap-6 *:text-center @[480px]:grid-cols-2 @[768px]:max-w-full @[768px]:grid-cols-3 @[1024px]:grid-cols-5 md:mt-16">
+        <div className="mx-auto mt-8 grid max-w-sm justify-center gap-6 *:text-center @[480px]:grid-cols-2 @[768px]:max-w-full @[768px]:grid-cols-3 md:mt-16">
           <Card className="group border-0 bg-muted shadow-none">
             <CardHeader className="pb-3">
               <CardDecorator>
