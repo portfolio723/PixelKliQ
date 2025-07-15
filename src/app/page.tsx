@@ -2,7 +2,6 @@ import About from '@/components/sections/about';
 import Contact from '@/components/sections/contact';
 import Hero from '@/components/sections/hero';
 import Industries from '@/components/sections/industries';
-import SeoGenerator from '@/components/sections/seo-generator';
 import Services from '@/components/sections/services';
 import Testimonials from '@/components/sections/testimonials';
 import Footer from '@/components/shared/footer';
@@ -19,7 +18,6 @@ export default function Home() {
         <Industries />
         <Testimonials />
         <Contact />
-        <SeoGenerator />
       </main>
       <Footer />
     </div>
