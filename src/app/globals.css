@@ -15,6 +15,7 @@ body {
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
     --primary: 220 89% 60%;
+    --primary-rgb: 61, 134, 245;
     --primary-foreground: 0 0% 100%;
     --secondary: 0 0% 96.1%;
     --secondary-foreground: 0 0% 9%;
@@ -50,6 +51,7 @@ body {
     --popover: 0 0% 13%;
     --popover-foreground: 0 0% 98%;
     --primary: 220 89% 60%;
+    --primary-rgb: 61, 134, 245;
     --primary-foreground: 0 0% 100%;
     --secondary: 0 0% 13%;
     --secondary-foreground: 0 0% 98%;
@@ -86,3 +88,8 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.text-shadow-lg {
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+    

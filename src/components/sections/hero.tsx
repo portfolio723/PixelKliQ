@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export default function Hero() {
   return (
@@ -20,13 +21,22 @@ export default function Hero() {
           End-to-end solutions for design, development, HR, telecommunication, and education.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button asChild size="lg" className="font-bold text-base uppercase tracking-wider">
+          <Button asChild size="lg" className={cn(
+            "font-bold text-base uppercase tracking-wider",
+            "transition-all duration-300 ease-in-out",
+            "shadow-[0_0_15px_rgba(var(--primary-rgb),0.4)]",
+            "hover:shadow-[0_0_30px_rgba(var(--primary-rgb),0.8)] hover:scale-105"
+          )}>
             <a href="#services">
               Explore Services
               <ArrowRight className="ml-2 h-5 w-5" />
             </a>
           </Button>
-          <Button asChild size="lg" variant="secondary" className="font-bold text-base uppercase tracking-wider">
+          <Button asChild size="lg" variant="secondary" className={cn(
+            "font-bold text-base uppercase tracking-wider",
+            "transition-all duration-300 ease-in-out",
+            "hover:bg-secondary/90 hover:scale-105"
+          )}>
             <a href="#contact">Book a Free Consultation</a>
           </Button>
         </div>
@@ -34,3 +44,5 @@ export default function Hero() {
     </section>
   );
 }
+
+    
