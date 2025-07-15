@@ -40,7 +40,7 @@ export default function Features() {
                  <div className="relative mx-auto grid max-w-2xl lg:max-w-4xl divide-x divide-y border *:p-12 sm:grid-cols-2 lg:grid-cols-3">
                     {features.map((feature) => (
                          <div key={feature.title} className="space-y-3">
-                            <div className="flex items-center gap-2 text-primary">
+                            <div className="flex items-center gap-2 text-foreground">
                                 {feature.icon}
                                 <h3 className="text-sm font-medium">{feature.title}</h3>
                             </div>
