@@ -5,6 +5,7 @@ import Hero from '@/components/sections/hero';
 import Industries from '@/components/sections/industries';
 import Testimonials from '@/components/sections/testimonials';
 import Features from '@/components/sections/features';
+import Faq from '@/components/sections/faq';
 import Footer from '@/components/shared/footer';
 import Header from '@/components/shared/header';
 
@@ -19,6 +20,7 @@ export default function Home() {
         <Industries />
         <Features />
         <Testimonials />
+        <Faq />
         <Contact />
       </main>
       <Footer />

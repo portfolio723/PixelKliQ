@@ -12,6 +12,7 @@ const navItems = [
   { href: '#services', label: 'Services' },
   { href: '#industries', label: 'Industries' },
   { href: '#testimonials', label: 'Testimonials' },
+  { href: '#faq', label: 'FAQ' },
 ];
 
 const NavLink = ({
@@ -67,15 +68,18 @@ export default function Header() {
       const sections = navItems.map(item => document.getElementById(item.href.substring(1)));
       let currentSection = 'home';
       
-      sections.forEach(section => {
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
         if (section && window.scrollY >= section.offsetTop - 100) {
           currentSection = section.id;
+          break;
         }
-      });
+      }
       setActiveSection(currentSection);
     };
     
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
