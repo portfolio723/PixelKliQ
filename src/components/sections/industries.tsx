@@ -41,7 +41,7 @@ interface DisplayCardsProps {
 
 function DisplayCards({ cards }: DisplayCardsProps) {
   return (
-    <div className="grid h-72 [grid-template-areas:'stack'] place-items-center opacity-100 animate-in fade-in-0 duration-700">
+    <div className="grid h-96 w-full [grid-template-areas:'stack'] place-items-center opacity-100 animate-in fade-in-0 duration-700 group/stack">
       {cards.map((cardProps, index) => (
         <DisplayCard key={index} {...cardProps} />
       ))}
@@ -55,25 +55,37 @@ const industryCards: DisplayCardProps[] = [
         title: "Technology", 
         description: "SaaS, ERP & App Development", 
         icon: <Briefcase className="size-5" />,
-        className: "[grid-area:stack] hover:-translate-y-10"
+        className: "[grid-area:stack] z-10 transition-all duration-300 ease-in-out group-hover/stack:-translate-y-32"
     },
     { 
         title: "Healthcare", 
         description: "Clinic Management & Telemedicine", 
         icon: <HeartPulse className="size-5" />,
-        className: "[grid-area:stack] translate-x-12 translate-y-10 hover:-translate-y-1"
+        className: "[grid-area:stack] z-20 translate-y-12 transition-all duration-300 ease-in-out group-hover/stack:-translate-y-16"
     },
     { 
         title: "Education", 
         description: "E-learning Platforms & Edutech", 
         icon: <GraduationCap className="size-5" />,
-        className: "[grid-area:stack] translate-x-24 translate-y-20 hover:translate-y-10"
+        className: "[grid-area:stack] z-30 translate-y-24 transition-all duration-300 ease-in-out group-hover/stack:translate-y-0"
     },
      { 
         title: "Real Estate", 
         description: "CRM & Property Portals", 
         icon: <LandPlot className="size-5" />,
-        className: "[grid-area:stack] translate-x-36 translate-y-30 hover:translate-y-20",
+        className: "[grid-area:stack] z-40 translate-y-36 transition-all duration-300 ease-in-out group-hover/stack:translate-y-16",
+    },
+    { 
+        title: "F & B", 
+        description: "Restaurant & Delivery Solutions", 
+        icon: <Utensils className="size-5" />,
+        className: "[grid-area:stack] z-50 translate-y-48 transition-all duration-300 ease-in-out group-hover/stack:translate-y-32",
+    },
+    { 
+        title: "E-Commerce", 
+        description: "Online Stores & Marketplaces", 
+        icon: <ShoppingCart className="size-5" />,
+        className: "[grid-area:stack] z-60 translate-y-60 transition-all duration-300 ease-in-out group-hover/stack:translate-y-48",
     },
 ];
 
@@ -82,7 +94,7 @@ export default function Industries() {
   return (
     <section id="industries" className="py-16 sm:py-24 bg-card/50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-24">
+        <div className="text-center mb-12 sm:mb-24">
           <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">
             Industries We Serve
           </h2>
