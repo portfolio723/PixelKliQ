@@ -116,24 +116,24 @@ export default function Contact() {
             </Card>
             <div className="space-y-8">
                 <div>
-                    <h3 className="text-2xl font-headline font-semibold text-primary mb-4">Contact Information</h3>
+                    <h3 className="text-2xl font-headline font-semibold text-foreground mb-4">Contact Information</h3>
                     <div className="space-y-4 text-lg">
                         <div className="flex items-center gap-4">
-                            <MapPin className="w-6 h-6 text-primary" />
+                            <MapPin className="w-6 h-6 text-foreground" />
                             <span>Hyderabad, India</span>
                         </div>
                         <div className="flex items-center gap-4">
-                            <Phone className="w-6 h-6 text-primary" />
+                            <Phone className="w-6 h-6 text-foreground" />
                             <a href="tel:+911234567890" className="hover:text-primary transition-colors">+91 123 456 7890</a>
                         </div>
                         <div className="flex items-center gap-4">
-                            <Mail className="w-6 h-6 text-primary" />
+                            <Mail className="w-6 h-6 text-foreground" />
                             <a href="mailto:hello@pixelkliq.com" className="hover:text-primary transition-colors">hello@pixelkliq.com</a>
                         </div>
                     </div>
                 </div>
                  <div>
-                    <h3 className="text-2xl font-headline font-semibold text-primary mb-4">Follow Us</h3>
+                    <h3 className="text-2xl font-headline font-semibold text-foreground mb-4">Follow Us</h3>
                     <div className="flex space-x-4">
                         <a href="#" className="p-2 rounded-full bg-secondary hover:bg-primary transition-colors text-foreground hover:text-primary-foreground"><Twitter className="w-6 h-6" /></a>
                         <a href="#" className="p-2 rounded-full bg-secondary hover:bg-primary transition-colors text-foreground hover:text-primary-foreground"><Linkedin className="w-6 h-6" /></a>
@@ -141,7 +141,7 @@ export default function Contact() {
                     </div>
                 </div>
                 <div>
-                    <h3 className="text-2xl font-headline font-semibold text-primary mb-4">Our Location</h3>
+                    <h3 className="text-2xl font-headline font-semibold text-foreground mb-4">Our Location</h3>
                     <div className="aspect-video rounded-lg overflow-hidden">
                          <iframe 
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243647.3160946051!2d78.2679589178306!3d17.41262741643349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99daeaebd2c7%3A0xae93b78392bafbc2!2sHyderabad%2C%20Telangana%2C%20India!5e0!3m2!1sen!2sus!4v1683054362842!5m2!1sen!2sus"

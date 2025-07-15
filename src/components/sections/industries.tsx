@@ -1,15 +1,33 @@
 "use client";
 
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Server, GraduationCap, HeartPulse, Building, ShoppingCart, Cpu } from "lucide-react";
 import { motion } from "framer-motion";
 
 const industries = [
-  "Startups & Entrepreneurs",
-  "Education & EdTech",
-  "Healthcare & Wellness",
-  "Real Estate & Construction",
-  "eCommerce & Retail",
-  "SaaS & Technology Companies",
+  {
+    title: "Startups & Entrepreneurs",
+    icon: <GraduationCap className="size-4 text-foreground" />,
+  },
+  {
+    title: "Education & EdTech",
+    icon: <GraduationCap className="size-4 text-foreground" />,
+  },
+  {
+    title: "Healthcare & Wellness",
+    icon: <HeartPulse className="size-4 text-foreground" />,
+  },
+  {
+    title: "Real Estate & Construction",
+    icon: <Building className="size-4 text-foreground" />,
+  },
+  {
+    title: "eCommerce & Retail",
+    icon: <ShoppingCart className="size-4 text-foreground" />,
+  },
+  {
+    title: "SaaS & Technology Companies",
+    icon: <Cpu className="size-4 text-foreground" />,
+  },
 ];
 
 const leftColumnIndustries = industries.slice(0, 3);
@@ -51,9 +69,9 @@ export default function Industries() {
             }}
           >
             {leftColumnIndustries.map((industry, i) => (
-              <motion.div key={industry} className="flex items-start gap-3" custom={i} variants={listVariants}>
-                <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                <span className="text-lg text-foreground">{industry}</span>
+              <motion.div key={industry.title} className="flex items-start gap-3" custom={i} variants={listVariants}>
+                <CheckCircle2 className="w-6 h-6 text-foreground flex-shrink-0 mt-1" />
+                <span className="text-lg text-foreground">{industry.title}</span>
               </motion.div>
             ))}
           </motion.div>
@@ -67,9 +85,9 @@ export default function Industries() {
             }}
           >
             {rightColumnIndustries.map((industry, i) => (
-              <motion.div key={industry} className="flex items-start gap-3" custom={i} variants={listVariants}>
-                <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                <span className="text-lg text-foreground">{industry}</span>
+              <motion.div key={industry.title} className="flex items-start gap-3" custom={i} variants={listVariants}>
+                <CheckCircle2 className="w-6 h-6 text-foreground flex-shrink-0 mt-1" />
+                <span className="text-lg text-foreground">{industry.title}</span>
               </motion.div>
             ))}
           </motion.div>

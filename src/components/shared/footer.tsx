@@ -22,7 +22,6 @@ const footerLinks: FooterSection[] = [
 			{ title: 'Home', href: '#home' },
 			{ title: 'About', href: '#about' },
 			{ title: 'Services', href: '#services' },
-			{ title: 'Industries', href: '#industries' },
 		],
 	},
 	{
@@ -51,7 +50,7 @@ export default function Footer() {
 			<div className="grid w-full gap-8 xl:grid-cols-3 xl:gap-8">
 				<AnimatedContainer className="space-y-4">
 					<div className="flex items-center gap-2">
-            <Zap className="h-8 w-8 text-primary" />
+            <Zap className="h-8 w-8 text-foreground" />
             <span className="text-2xl font-bold font-headline">PixelKliQ</span>
           </div>
 					<p className="text-muted-foreground mt-8 text-sm md:mt-0">

@@ -106,7 +106,7 @@ export default function Header() {
     )}>
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
         <Link href="#home" className="flex items-center gap-2">
-          <Zap className="h-7 w-7 text-primary" />
+          <Zap className="h-7 w-7 text-foreground" />
           <span className="text-xl font-bold font-headline">PixelKliQ</span>
         </Link>
         <div className="hidden md:flex items-center gap-6">
@@ -129,7 +129,7 @@ export default function Header() {
                 </SheetHeader>
               <div className="p-6 h-full flex flex-col">
                 <Link href="#home" className="flex items-center gap-2 mb-8">
-                  <Zap className="h-7 w-7 text-primary" />
+                  <Zap className="h-7 w-7 text-foreground" />
                   <span className="text-xl font-bold font-headline">PixelKliQ</span>
                 </Link>
                 <NavLinks isMobile />

@@ -48,7 +48,7 @@ export default function Features() {
                         </div>
                     ))}
                      <div className="space-y-2">
-                         <div className="flex items-center gap-2 text-primary">
+                         <div className="flex items-center gap-2 text-foreground">
                              <Zap className="size-4" />
                               <h3 className="text-sm font-medium">Ready to See the Proof?</h3>
                          </div>

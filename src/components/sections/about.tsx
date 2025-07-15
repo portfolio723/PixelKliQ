@@ -53,24 +53,24 @@ const Counter = ({ value, duration = 2000 }: { value: number, duration?: number 
     }
   }, [value, duration, inView]);
 
-  return <span ref={ref} className="text-4xl font-bold text-primary">{count}+</span>;
+  return <span ref={ref} className="text-4xl font-bold text-foreground">{count}+</span>;
 };
 
 const coreValues = [
     {
         title: "Our Mission",
         description: "To build a world where creativity, talent & tech create real-world impact.",
-        icon: <Rocket className="w-6 h-6 text-primary" />
+        icon: <Rocket className="w-6 h-6 text-foreground" />
     },
     {
         title: "Our Vision",
         description: "To be the most trusted end-to-end digital growth partner for businesses worldwide.",
-        icon: <Eye className="w-6 h-6 text-primary" />
+        icon: <Eye className="w-6 h-6 text-foreground" />
     },
     {
         title: "Our Approach",
         description: "Agile | Creative | Scalable. We adapt to your needs, innovate with purpose, and build for the future.",
-        icon: <Workflow className="w-6 h-6 text-primary" />
+        icon: <Workflow className="w-6 h-6 text-foreground" />
     }
 ];
 
