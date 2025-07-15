@@ -1,50 +1,113 @@
-import { Code, Heart } from 'lucide-react';
-import { Twitter, Linkedin, Instagram } from 'lucide-react';
+'use client';
+import React from 'react';
+import type { ComponentProps, ReactNode } from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
+import { Zap, Twitter, Linkedin, Instagram } from 'lucide-react';
 
-const navItems = [
-    { href: '#home', label: 'Home' },
-    { href: '#about', label: 'About' },
-    { href: '#services', label: 'Services' },
-    { href: '#contact', label: 'Contact' },
-  ];
+interface FooterLink {
+	title: string;
+	href: string;
+	icon?: React.ComponentType<{ className?: string }>;
+}
+
+interface FooterSection {
+	label: string;
+	links: FooterLink[];
+}
+
+const footerLinks: FooterSection[] = [
+	{
+		label: 'Navigate',
+		links: [
+			{ title: 'Home', href: '#home' },
+			{ title: 'About', href: '#about' },
+			{ title: 'Services', href: '#services' },
+			{ title: 'Industries', href: '#industries' },
+		],
+	},
+	{
+		label: 'Company',
+		links: [
+			{ title: 'Testimonials', href: '#testimonials' },
+			{ title: 'FAQ', href: '#faq' },
+			{ title: 'Contact', href: '#contact' },
+		],
+	},
+	{
+		label: 'Social Links',
+		links: [
+			{ title: 'Twitter', href: '#', icon: Twitter },
+			{ title: 'LinkedIn', href: '#', icon: Linkedin },
+			{ title: 'Instagram', href: '#', icon: Instagram },
+		],
+	},
+];
 
 export default function Footer() {
-  return (
-    <footer className="bg-card/50 border-t border-border/50">
-      <div className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-          <div>
-            <a href="#home" className="font-headline text-2xl font-bold">PixelKliQ HQ</a>
-            <p className="text-muted-foreground mt-2">Digital Solutions for a Modern World.</p>
+	return (
+		<footer className="relative w-full max-w-6xl mx-auto flex flex-col items-center justify-center rounded-t-4xl border-t bg-[radial-gradient(35%_128px_at_50%_0%,theme(backgroundColor.white/8%),transparent)] px-6 py-12 lg:py-16">
+			<div className="bg-foreground/20 absolute top-0 right-1/2 left-1/2 h-px w-1/3 -translate-x-1/2 -translate-y-1/2 rounded-full blur" />
+
+			<div className="grid w-full gap-8 xl:grid-cols-3 xl:gap-8">
+				<AnimatedContainer className="space-y-4">
+					<div className="flex items-center gap-2">
+            <Zap className="h-8 w-8 text-primary" />
+            <span className="text-2xl font-bold font-headline">PixelKliQ</span>
           </div>
-          <div>
-            <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              {navItems.map((item) => (
-                  <li key={item.label}>
-                      <a href={item.href} className="text-muted-foreground hover:text-primary transition-colors">
-                          {item.label}
-                      </a>
-                  </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-semibold text-lg mb-4">Follow Us</h3>
-            <div className="flex justify-center md:justify-start space-x-4">
-                <a href="#" aria-label="Twitter" className="text-muted-foreground hover:text-primary transition-colors"><Twitter /></a>
-                <a href="#" aria-label="LinkedIn" className="text-muted-foreground hover:text-primary transition-colors"><Linkedin /></a>
-                <a href="#" aria-label="Instagram" className="text-muted-foreground hover:text-primary transition-colors"><Instagram /></a>
-            </div>
-          </div>
-        </div>
-        <div className="border-t border-border/50 mt-8 pt-6 text-center text-muted-foreground text-sm">
-            <p>&copy; {new Date().getFullYear()} PixelKliQ HQ. All Rights Reserved.</p>
-            <p className="flex items-center justify-center gap-1 mt-2">
-                Coded with <Heart className="w-4 h-4 text-red-500" /> by a human.
-            </p>
-        </div>
-      </div>
-    </footer>
-  );
-}
+					<p className="text-muted-foreground mt-8 text-sm md:mt-0">
+						© {new Date().getFullYear()} PixelKliQ HQ. All rights reserved.
+					</p>
+				</AnimatedContainer>
+
+				<div className="mt-10 grid grid-cols-2 gap-8 md:grid-cols-4 xl:col-span-2 xl:mt-0">
+					{footerLinks.map((section, index) => (
+						<AnimatedContainer key={section.label} delay={0.1 + index * 0.1}>
+							<div className="mb-10 md:mb-0">
+								<h3 className="text-xs uppercase tracking-wider font-semibold">{section.label}</h3>
+								<ul className="text-muted-foreground mt-4 space-y-2 text-sm">
+									{section.links.map((link) => (
+										<li key={link.title}>
+											<a
+												href={link.href}
+												className="hover:text-foreground inline-flex items-center transition-all duration-300"
+											>
+												{link.icon && <link.icon className="me-2 size-4" />}
+												{link.title}
+											</a>
+										</li>
+									))}
+								</ul>
+							</div>
+						</AnimatedContainer>
+					))}
+				</div>
+			</div>
+		</footer>
+	);
+};
+
+type ViewAnimationProps = {
+	delay?: number;
+	className?: ComponentProps<typeof motion.div>['className'];
+	children: ReactNode;
+};
+
+function AnimatedContainer({ className, delay = 0.1, children }: ViewAnimationProps) {
+	const shouldReduceMotion = useReducedMotion();
+
+	if (shouldReduceMotion) {
+		return <div className={className}>{children}</div>;
+	}
+
+	return (
+		<motion.div
+			initial={{ filter: 'blur(4px)', translateY: -8, opacity: 0 }}
+			whileInView={{ filter: 'blur(0px)', translateY: 0, opacity: 1 }}
+			viewport={{ once: true }}
+			transition={{ delay, duration: 0.8 }}
+			className={className}
+		>
+			{children}
+		</motion.div>
+	);
+};
