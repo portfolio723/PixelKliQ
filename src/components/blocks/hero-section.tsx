@@ -85,28 +85,6 @@ export function HeroSection({
               ))}
             </div>
           </div>
-
-          <div className="relative pt-12">
-            <MockupFrame
-              className="animate-appear opacity-0 delay-700"
-              size="small"
-            >
-              <Mockup type="responsive">
-                <Image
-                  src={imageSrc ?? 'https://placehold.co/1248x765.png'}
-                  alt={image.alt}
-                  width={1248}
-                  height={765}
-                  priority
-                  data-ai-hint="digital abstract"
-                />
-              </Mockup>
-            </MockupFrame>
-            <Glow
-              variant="top"
-              className="animate-appear-zoom opacity-0 delay-1000"
-            />
-          </div>
         </div>
       </div>
     </section>
