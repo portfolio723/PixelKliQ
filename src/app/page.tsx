@@ -33,9 +33,9 @@ const MotionSection = ({ children }: { children: React.ReactNode }) => (
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-[100dvh] bg-background text-foreground">
+    <div className="flex flex-col min-h-[100dvh] bg-background text-foreground overflow-x-hidden">
       <Hero />
-      <main className="flex-1 mt-16 overflow-x-hidden">
+      <main className="flex-1 mt-16">
         <MotionSection>
           <About />
         </MotionSection>
