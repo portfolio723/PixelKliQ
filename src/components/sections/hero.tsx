@@ -2,12 +2,12 @@
 'use client'
 import React from 'react'
 import Link from 'next/link'
-import { ArrowRight, ChevronRight, Menu, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { AnimatedGroup } from '@/components/ui/animated-group'
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
-import { Component as EtheralShadow } from '@/components/ui/etheral-shadow'
+import { SparklesCore } from '@/components/ui/sparkles'
 
 const transitionVariants = {
     item: {
@@ -36,13 +36,17 @@ export default function Hero() {
             <main className="overflow-hidden">
                 <section>
                     <div className="relative h-[600px] md:h-[700px]">
-                         <EtheralShadow
-                            className="absolute inset-0"
-                            color="hsl(var(--background))"
-                            animation={{ scale: 60, speed: 50 }}
-                            noise={{ opacity: 0.1, scale: 1.2 }}
-                            sizing="fill"
-                         />
+                         <div className="w-full absolute inset-0 h-full">
+                            <SparklesCore
+                                id="tsparticlesfullpage"
+                                background="transparent"
+                                minSize={0.6}
+                                maxSize={1.4}
+                                particleDensity={100}
+                                className="w-full h-full"
+                                particleColor="#FFFFFF"
+                            />
+                        </div>
                         <div aria-hidden className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,hsl(var(--background))_75%)]" />
                         
                         <div className="absolute inset-0 flex items-center justify-center pt-24 md:pt-36">
