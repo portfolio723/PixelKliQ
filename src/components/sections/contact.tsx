@@ -55,7 +55,7 @@ const socials = [
   },
   {
     name: "Mail",
-    image: "https://img.icons8.com/color/96/new-post.png",
+    image: "https://img.icons8.com/?size=100&id=3AYCSzCO85Qw&format=png&color=000000",
     dataAiHint: "email icon",
     href: "mailto:hello@pixelkliq.com",
   },
