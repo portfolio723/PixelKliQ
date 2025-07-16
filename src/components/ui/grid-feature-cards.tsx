@@ -1,5 +1,6 @@
 import { cn } from '@/lib/utils';
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 type FeatureType = {
 	title: string;
@@ -18,6 +19,16 @@ export function FeatureCard({ feature, className, ...props }: FeatureCardPorps) 
         setPattern(genRandomPattern());
     }, []);
 
+    const iconVariants = {
+        hidden: { opacity: 0, scale: 0.8, rotate: -10 },
+        visible: { 
+          opacity: 1, 
+          scale: 1, 
+          rotate: 0,
+          transition: { duration: 0.4, ease: "easeOut" }
+        },
+    };
+
 	return (
 		<div className={cn('relative overflow-hidden p-6', className)} {...props}>
 			<div className="pointer-events-none absolute top-0 left-1/2 -mt-2 -ml-20 h-full w-full [mask-image:linear-gradient(white,transparent)]">
@@ -34,7 +45,15 @@ export function FeatureCard({ feature, className, ...props }: FeatureCardPorps) 
 					)}
 				</div>
 			</div>
-			<feature.icon className="text-foreground/75 size-6" strokeWidth={1.5} aria-hidden />
+            <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.5 }}
+                variants={iconVariants}
+                className="inline-block"
+            >
+			    <feature.icon className="text-foreground/75 size-6" strokeWidth={1.5} aria-hidden />
+            </motion.div>
 			<h3 className="mt-10 text-sm md:text-base font-semibold">{feature.title}</h3>
 			<p className="text-muted-foreground relative z-20 mt-2 text-sm">{feature.description}</p>
 		</div>

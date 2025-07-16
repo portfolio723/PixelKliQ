@@ -1,5 +1,7 @@
+'use client';
 import { Briefcase, MessageSquare, Scale, Users, Zap, CheckCircle } from 'lucide-react'
 import { TextRevealByWord } from '@/components/ui/text-reveal';
+import { motion } from 'framer-motion';
 
 const features = [
   {
@@ -36,6 +38,17 @@ const features = [
 
 
 export default function About() {
+
+    const iconVariants = {
+        hidden: { opacity: 0, scale: 0.8, rotate: -10 },
+        visible: { 
+          opacity: 1, 
+          scale: 1, 
+          rotate: 0,
+          transition: { duration: 0.4, ease: "easeOut" }
+        },
+      };
+
     return (
         <section id="about" className="py-16 md:py-20">
             <div className="container mx-auto max-w-5xl space-y-16 px-6">
@@ -47,7 +60,14 @@ export default function About() {
                     {features.map((feature) => (
                          <div key={feature.title} className="space-y-3">
                             <div className="flex items-center gap-2 text-foreground">
-                                {feature.icon}
+                                <motion.div
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    viewport={{ once: true, amount: 0.5 }}
+                                    variants={iconVariants}
+                                >
+                                    {feature.icon}
+                                </motion.div>
                                 <h3 className="text-sm font-medium">{feature.title}</h3>
                             </div>
                             <p className="text-sm text-muted-foreground">{feature.description}</p>
