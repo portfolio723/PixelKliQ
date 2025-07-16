@@ -76,7 +76,7 @@ export function SocialLinks({ socials, className, ...props }: SocialLinksProps) 
                   src={social.image}
                   alt={social.name}
                   data-ai-hint={social.dataAiHint}
-                  className="size-16"
+                  className="size-12"
                   initial={{
                     y: -40,
                     rotate: rotation,
