@@ -4,24 +4,34 @@ import { TextRevealByWord } from '../ui/text-reveal';
 
 const faqItems = [
     {
-        id: "charging-model",
-        question: "Do you charge hourly or on spec?",
-        answer: "We offer flexible pricing models to suit your project needs. We can work on a per-project basis (on spec) for clearly defined scopes, or on an hourly basis for more dynamic, ongoing projects. We'll discuss the best fit for you during our initial consultation."
+        id: "services",
+        question: "What kind of services does PixelKliQ offer?",
+        answer: "PixelKliQ provides end-to-end services including creative design, web/app development, HR solutions, telecommunication setup, and educational programs through internships and certifications."
     },
     {
-        id: "experience",
-        question: "How long have you been doing design?",
-        answer: "Our core team has over a decade of combined experience in the design and development industry. We've had the pleasure of working with a diverse range of clients, from innovative startups to established enterprises, helping them bring their digital visions to life."
+        id: "clients",
+        question: "Who are your typical clients?",
+        answer: "We work with startups, SMEs, large enterprises, educational institutions, and tech-focused product companies looking for scalable digital growth solutions."
     },
     {
-        id: "trial-designs",
-        question: "Can you do a couple of designs to see if I like what you do?",
-        answer: "We typically don't provide free design mockups, as our process is collaborative and discovery-led. However, we do offer paid discovery phases or smaller initial projects to ensure we're the right fit for each other before committing to a larger engagement. Our portfolio also showcases the quality of our work."
+        id: "approach",
+        question: "What makes your approach different?",
+        answer: "We combine agile methodology with creative problem-solving and tech innovation, all handled in-house by a multidisciplinary team for faster and cohesive execution."
     },
     {
-        id: "process-timeline",
-        question: "What is the process and how long does it take?",
-        answer: "Our process is transparent and structured, typically involving discovery, design, development, and deployment phases. The timeline varies depending on the project's complexity, but a standard website can take anywhere from 4 to 12 weeks. We'll provide a detailed project timeline after our initial discovery phase."
+        id: "one-roof",
+        question: "Can I get all services under one roof?",
+        answer: "Yes! From branding to development to hiring and support systems, PixelKliQ provides a unified platform to simplify your business operations."
+    },
+    {
+        id: "internships",
+        question: "Do you offer internship or learning opportunities?",
+        answer: "Absolutely. Through PixelKliQ Edutech, we offer real-time internship programs, certification courses, and placement assistance for students and professionals."
+    },
+    {
+        id: "get-started",
+        question: "How do I get started with a project?",
+        answer: "Simply fill out our contact form, schedule a free consultation, or drop us an email. Our team will reach out to understand your needs and build a custom roadmap."
     }
 ];
 
