@@ -19,6 +19,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Phone, Mail, MapPin } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { BorderBeam } from '@/components/magicui/border-beam';
+import { Dock, DockIcon } from '@/components/magicui/dock';
+import Link from 'next/link';
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -125,19 +127,24 @@ export default function Contact() {
         <div className="space-y-8 mt-12 text-center">
             <div>
                 <h3 className="text-2xl font-headline font-semibold text-foreground mb-4">Contact Information</h3>
-                <div className="space-y-4 text-lg">
-                    <div className="flex items-center justify-center gap-4">
-                        <MapPin className="w-6 h-6 text-foreground" />
-                        <span>Hyderabad, India</span>
-                    </div>
-                    <div className="flex items-center justify-center gap-4">
-                        <Phone className="w-6 h-6 text-foreground" />
-                        <a href="tel:+911234567890" className="hover:text-primary transition-colors">+91 123 456 7890</a>
-                    </div>
-                    <div className="flex items-center justify-center gap-4">
-                        <Mail className="w-6 h-6 text-foreground" />
-                        <a href="mailto:hello@pixelkliq.com" className="hover:text-primary transition-colors">hello@pixelkliq.com</a>
-                    </div>
+                <div className="relative">
+                  <Dock direction="middle">
+                    <DockIcon>
+                      <Link href="#">
+                        <MapPin className="size-6" />
+                      </Link>
+                    </DockIcon>
+                    <DockIcon>
+                      <Link href="tel:+911234567890">
+                        <Phone className="size-6" />
+                      </Link>
+                    </DockIcon>
+                    <DockIcon>
+                      <Link href="mailto:hello@pixelkliq.com">
+                        <Mail className="size-6" />
+                      </Link>
+                    </DockIcon>
+                  </Dock>
                 </div>
             </div>
         </div>
