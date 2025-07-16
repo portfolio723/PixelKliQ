@@ -1,8 +1,11 @@
+
 'use client';
 import React from 'react';
 import type { ComponentProps, ReactNode } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { Zap, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { Twitter, Linkedin, Instagram } from 'lucide-react';
+import Image from 'next/image';
+import { cn } from '@/lib/utils';
 
 interface FooterLink {
 	title: string;
@@ -42,6 +45,18 @@ const footerLinks: FooterSection[] = [
 	},
 ];
 
+const Logo = ({ className }: { className?: string }) => {
+    return (
+        <Image
+            src="https://miro.medium.com/v2/resize:fit:828/format:webp/1*jna_8wb5YV4qpHjN2WHTOA.png"
+            alt="PixelKliQ Logo"
+            width={120}
+            height={28}
+            className={cn('h-7 w-auto', className)}
+        />
+    )
+}
+
 export default function Footer() {
 	return (
 		<footer className="relative w-full max-w-6xl mx-auto flex flex-col items-center justify-center rounded-t-4xl border-t bg-[radial-gradient(35%_128px_at_50%_0%,theme(backgroundColor.white/8%),transparent)] px-6 py-12 lg:py-16">
@@ -50,9 +65,8 @@ export default function Footer() {
 			<div className="grid w-full gap-8 xl:grid-cols-3 xl:gap-8">
 				<AnimatedContainer className="space-y-4">
 					<div className="flex items-center gap-2">
-            <Zap className="h-8 w-8 text-foreground" />
-            <span className="text-2xl font-bold font-headline">PixelKliQ</span>
-          </div>
+                        <Logo />
+                    </div>
 					<p className="text-muted-foreground mt-8 text-sm md:mt-0">
 						© {new Date().getFullYear()} PixelKliQ HQ. All rights reserved.
 					</p>
