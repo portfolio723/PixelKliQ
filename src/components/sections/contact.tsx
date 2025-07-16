@@ -105,7 +105,7 @@ export default function Contact() {
         
         <div className="w-full max-w-2xl">
             <div className="relative">
-              <Card>
+              <Card className="rounded-none">
                   <CardHeader>
                       <CardTitle>Send us a Message</CardTitle>
                       <CardDescription>Fill out the form and we&apos;ll get back to you.</CardDescription>
@@ -121,7 +121,7 @@ export default function Contact() {
                                 <FormItem>
                                 <FormLabel>First Name</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="Adam" {...field} />
+                                    <Input placeholder="Adam" {...field} className="rounded-none" />
                                 </FormControl>
                                 <FormMessage />
                                 </FormItem>
@@ -134,7 +134,7 @@ export default function Contact() {
                                 <FormItem>
                                 <FormLabel>Last Name</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="Smith" {...field} />
+                                    <Input placeholder="Smith" {...field} className="rounded-none" />
                                 </FormControl>
                                 <FormMessage />
                                 </FormItem>
@@ -148,7 +148,7 @@ export default function Contact() {
                               <FormItem>
                               <FormLabel>Email</FormLabel>
                               <FormControl>
-                                  <Input placeholder="youremail@gmail.com" {...field} />
+                                  <Input placeholder="youremail@gmail.com" {...field} className="rounded-none" />
                               </FormControl>
                               <FormMessage />
                               </FormItem>
@@ -161,7 +161,7 @@ export default function Contact() {
                               <FormItem>
                               <FormLabel>Subject</FormLabel>
                               <FormControl>
-                                  <Input placeholder="Subject here" {...field} />
+                                  <Input placeholder="Subject here" {...field} className="rounded-none" />
                               </FormControl>
                               <FormMessage />
                               </FormItem>
@@ -174,13 +174,13 @@ export default function Contact() {
                               <FormItem>
                               <FormLabel>Your Message</FormLabel>
                               <FormControl>
-                                  <Textarea placeholder="Write you message" className="min-h-[120px]" {...field} />
+                                  <Textarea placeholder="Write you message" className="min-h-[120px] rounded-none" {...field} />
                               </FormControl>
                               <FormMessage />
                               </FormItem>
                           )}
                           />
-                          <Button type="submit" className="w-full font-bold uppercase tracking-wider">Submit</Button>
+                          <Button type="submit" className="w-full font-bold uppercase tracking-wider rounded-none">Submit</Button>
                       </form>
                       </Form>
                   </CardContent>
