@@ -29,7 +29,7 @@ export function TestimonialsSection({
       <div className="mx-auto flex max-w-container flex-col items-center text-center">
         <div className="text-center mb-12 px-4">
             <TextRevealByWord text={title} />
-            <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+            <p className="max-w-2xl mx-auto text-lg text-muted-foreground">
                 {description}
             </p>
         </div>
