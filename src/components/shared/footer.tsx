@@ -34,6 +34,15 @@ const footerLinks: FooterSection[] = [
 			{ title: 'Contact', href: '#contact' },
 		],
 	},
+	{
+		label: 'Legal',
+		links: [
+			{ title: 'Privacy policy', href: '#' },
+			{ title: 'Terms of use', href: '#' },
+			{ title: 'Refund policy', href: '#' },
+			{ title: 'Compliance', href: '#' },
+		],
+	},
 ];
 
 const Logo = ({ className }: { className?: string }) => {
