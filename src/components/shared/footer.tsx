@@ -3,7 +3,6 @@
 import React from 'react';
 import type { ComponentProps, ReactNode } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { Twitter, Linkedin, Instagram } from 'lucide-react';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 
@@ -33,14 +32,6 @@ const footerLinks: FooterSection[] = [
 			{ title: 'Testimonials', href: '#testimonials' },
 			{ title: 'FAQ', href: '#faq' },
 			{ title: 'Contact', href: '#contact' },
-		],
-	},
-	{
-		label: 'Social Links',
-		links: [
-			{ title: 'Twitter', href: '#', icon: Twitter },
-			{ title: 'LinkedIn', href: '#', icon: Linkedin },
-			{ title: 'Instagram', href: '#', icon: Instagram },
 		],
 	},
 ];
@@ -95,6 +86,9 @@ export default function Footer() {
 					))}
 				</div>
 			</div>
+            <div className="w-full text-center mt-12">
+                <p className="text-sm text-muted-foreground">Dev by Sandesigns</p>
+            </div>
 		</footer>
 	);
 };
