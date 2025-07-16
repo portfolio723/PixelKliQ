@@ -56,25 +56,24 @@ export default function Contact() {
     <section id="contact" className="relative py-16 sm:py-24 overflow-hidden">
       <div className="container relative z-10 mx-auto px-4 flex flex-col items-center">
         
-        <div className="w-full max-w-4xl">
-            <Card className="p-6 sm:p-10 border">
+        <div className="w-full max-w-xl">
+            <Card className="p-8 sm:p-10 border rounded-2xl shadow-md">
               <div className="flex flex-col items-center text-center mb-8">
-                <Badge variant="outline" className="mb-4">CONTACT</Badge>
-                <h2 className="text-3xl md:text-4xl font-bold">Got a project in mind?</h2>
-                <h2 className="text-3xl md:text-4xl font-bold">Let's get in touch.</h2>
+                <Badge variant="outline" className="mb-4 bg-blue-100 text-blue-600 border-transparent uppercase tracking-wide">Contact</Badge>
+                <h2 className="text-2xl font-semibold">Got a project in mind?<br/>Let's get in touch.</h2>
               </div>
               <CardContent className="p-0">
                   <Form {...form}>
                   <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left">
                         <FormField
                         control={form.control}
                         name="name"
                         render={({ field }) => (
                             <FormItem>
-                            <FormLabel className="text-muted-foreground">Name</FormLabel>
+                            <FormLabel className="block text-xs font-semibold mb-1">Name</FormLabel>
                             <FormControl>
-                                <Input placeholder="Your name *" {...field} className="border-0 border-b rounded-none px-0 focus-visible:ring-0 focus-visible:ring-offset-0" />
+                                <Input placeholder="Your name *" {...field} className="w-full border-b border-foreground focus:outline-none focus:border-foreground/80 p-2 bg-transparent h-auto" />
                             </FormControl>
                             <FormMessage />
                             </FormItem>
@@ -85,9 +84,9 @@ export default function Contact() {
                         name="email"
                         render={({ field }) => (
                             <FormItem>
-                            <FormLabel className="text-muted-foreground">Email</FormLabel>
+                            <FormLabel className="block text-xs font-semibold mb-1">Email</FormLabel>
                             <FormControl>
-                                <Input placeholder="Email address *" {...field} className="border-0 border-b rounded-none px-0 focus-visible:ring-0 focus-visible:ring-offset-0" />
+                                <Input placeholder="Email address *" {...field} className="w-full border-b border-foreground focus:outline-none focus:border-foreground/80 p-2 bg-transparent h-auto" />
                             </FormControl>
                             <FormMessage />
                             </FormItem>
@@ -95,21 +94,23 @@ export default function Contact() {
                         />
                       </div>
                       
-                      <FormField
-                      control={form.control}
-                      name="message"
-                      render={({ field }) => (
-                          <FormItem>
-                          <FormLabel className="text-muted-foreground">Message</FormLabel>
-                          <FormControl>
-                              <Textarea placeholder="Tell me about your project *" className="min-h-[120px] border-0 border-b rounded-none px-0 focus-visible:ring-0 focus-visible:ring-offset-0" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                          </FormItem>
-                      )}
-                      />
+                      <div className="text-left">
+                        <FormField
+                        control={form.control}
+                        name="message"
+                        render={({ field }) => (
+                            <FormItem>
+                            <FormLabel className="block text-xs font-semibold mb-1">Message</FormLabel>
+                            <FormControl>
+                                <Textarea placeholder="Tell me about your project *" className="w-full border-b border-foreground focus:outline-none focus:border-foreground/80 p-2 bg-transparent min-h-0" rows={4} {...field} />
+                            </FormControl>
+                            <FormMessage />
+                            </FormItem>
+                        )}
+                        />
+                      </div>
                       <div className="text-center">
-                        <Button type="submit" variant="outline" className="font-bold tracking-wider rounded-lg px-8">Submit</Button>
+                        <Button type="submit" className="bg-foreground text-background px-6 py-3 rounded-md shadow hover:bg-foreground/90 transition h-auto">Submit</Button>
                       </div>
                   </form>
                   </Form>
