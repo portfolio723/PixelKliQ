@@ -3,24 +3,24 @@ import { TextRevealByWord } from '../ui/text-reveal';
 
 const faqItems = [
     {
-        id: "what-services",
-        question: "What kind of services does PixelKliQ offer?",
-        answer: "PixelKliQ offers a 360° portfolio of digital services, including creative design (logos, websites, UI/UX), tech solutions (SaaS, ERP, CRM), HR services (recruitment, payroll), tele-services (call centers, lead gen), and edutech (internships, courses)."
+        id: "charging-model",
+        question: "Do you charge hourly or on spec?",
+        answer: "We offer flexible pricing models to suit your project needs. We can work on a per-project basis (on spec) for clearly defined scopes, or on an hourly basis for more dynamic, ongoing projects. We'll discuss the best fit for you during our initial consultation."
     },
     {
-        id: "who-do-you-work-with",
-        question: "Who are your typical clients?",
-        answer: "We work with a diverse range of clients, from startups and SMEs to large enterprises and educational institutions. Our solutions are scalable and tailored to fit the unique needs of each client."
+        id: "experience",
+        question: "How long have you been doing design?",
+        answer: "Our core team has over a decade of combined experience in the design and development industry. We've had the pleasure of working with a diverse range of clients, from innovative startups to established enterprises, helping them bring their digital visions to life."
     },
     {
-        id: "what-is-your-approach",
-        question: "What makes your approach different?",
-        answer: "Our approach is Agile, Creative, and Scalable. We blend agile methodologies for rapid development with creative thinking to deliver innovative solutions. All our projects are handled by in-house experts, ensuring quality and real-time collaboration."
+        id: "trial-designs",
+        question: "Can you do a couple of designs to see if I like what you do?",
+        answer: "We typically don't provide free design mockups, as our process is collaborative and discovery-led. However, we do offer paid discovery phases or smaller initial projects to ensure we're the right fit for each other before committing to a larger engagement. Our portfolio also showcases the quality of our work."
     },
     {
-        id: "how-to-start",
-        question: "How can I get started with a project?",
-        answer: "Getting started is easy! Just head to our contact section and send us a message or book a free consultation. We'd love to hear about your project and discuss how we can help you achieve your goals."
+        id: "process-timeline",
+        question: "What is the process and how long does it take?",
+        answer: "Our process is transparent and structured, typically involving discovery, design, development, and deployment phases. The timeline varies depending on the project's complexity, but a standard website can take anywhere from 4 to 12 weeks. We'll provide a detailed project timeline after our initial discovery phase."
     }
 ];
 
