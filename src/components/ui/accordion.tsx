@@ -1,7 +1,8 @@
+
 'use client';
 
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
-import { ChevronRight } from 'lucide-react';
+import { Plus, Minus } from 'lucide-react';
 import { forwardRef, type ComponentPropsWithoutRef, useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 
@@ -36,7 +37,7 @@ export const Accordions = forwardRef<
       onValueChange={setValue}
       collapsible={type === 'single' ? true : undefined}
       className={cn(
-        'divide-y divide-border overflow-hidden rounded-lg border bg-card',
+        'divide-y divide-border',
         className
       )}
       {...props}
@@ -64,11 +65,16 @@ export const Accordion = forwardRef<
         className="not-prose flex flex-row items-center font-medium text-foreground"
       >
         <AccordionPrimitive.Trigger 
-          className="flex flex-1 items-center gap-2 p-4 text-start focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          className="flex flex-1 items-center gap-4 py-4 text-start focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
         >
-          <ChevronRight 
-            className="-ms-1 h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200 group-data-[state=open]/accordion:rotate-90" 
-          />
+          <div className="relative h-4 w-4 shrink-0">
+            <Minus 
+              className="h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200 group-data-[state=closed]/accordion:opacity-0 group-data-[state=open]/accordion:opacity-100" 
+            />
+            <Plus 
+              className="absolute inset-0 h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200 group-data-[state=closed]/accordion:opacity-100 group-data-[state=open]/accordion:opacity-0" 
+            />
+          </div>
           {title}
         </AccordionPrimitive.Trigger>
       </AccordionPrimitive.Header>

@@ -1,3 +1,4 @@
+
 import { Accordion, Accordions } from '@/components/ui/accordion';
 import { TextRevealByWord } from '../ui/text-reveal';
 
@@ -27,7 +28,7 @@ const faqItems = [
 export default function Faq() {
   return (
     <section id="faq" className="py-16 sm:py-24">
-      <div className="container mx-auto max-w-3xl px-4">
+      <div className="container mx-auto max-w-3xl px-6">
         <div className="text-center mb-12">
           <TextRevealByWord text="Frequently Asked Questions" />
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
