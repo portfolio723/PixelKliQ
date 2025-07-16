@@ -44,7 +44,7 @@ export default function Hero() {
                     </div>
                     <div aria-hidden className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,hsl(var(--background))_75%)]" />
                     
-                    <div className="absolute inset-0 flex items-center justify-center pt-24 md:pt-36">
+                    <div className="absolute inset-0 flex items-center justify-center pt-24 md:pt-20">
                         <div className="mx-auto max-w-7xl px-6">
                             <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
                                 <AnimatedGroup variants={transitionVariants}>
