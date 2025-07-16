@@ -16,13 +16,11 @@ import {
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Phone, Mail, MapPin } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { BorderBeam } from '@/components/magicui/border-beam';
-import { Dock, DockIcon } from '@/components/magicui/dock';
-import Link from 'next/link';
 import { FlickeringGrid } from '../ui/flickering-grid';
 import { TextRevealByWord } from '../ui/text-reveal';
+import { SocialLinks } from '@/components/ui/social-links';
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -35,6 +33,39 @@ const formSchema = z.object({
     message: 'Message must be at least 10 characters.',
   }),
 });
+
+const socials = [
+  {
+    name: "Instagram",
+    image: "https://placehold.co/64x64.png",
+    dataAiHint: "instagram logo",
+    href: "https://www.instagram.com",
+  },
+  {
+    name: "LinkedIn",
+    image: "https://placehold.co/64x64.png",
+    dataAiHint: "linkedin logo",
+    href: "https://www.linkedin.com",
+  },
+  {
+    name: "Twitter",
+    image: "https://placehold.co/64x64.png",
+    dataAiHint: "twitter logo",
+    href: "https://www.twitter.com",
+  },
+  {
+    name: "Mail",
+    image: "https://placehold.co/64x64.png",
+    dataAiHint: "email icon",
+    href: "mailto:hello@pixelkliq.com",
+  },
+  {
+    name: "Phone",
+    image: "https://placehold.co/64x64.png",
+    dataAiHint: "phone icon",
+    href: "tel:+911234567890",
+  },
+];
 
 export default function Contact() {
   const { toast } = useToast();
@@ -136,23 +167,7 @@ export default function Contact() {
             <div>
                 <h3 className="text-2xl font-headline font-semibold text-foreground mb-4">Contact Information</h3>
                 <div className="relative">
-                  <Dock direction="middle">
-                    <DockIcon>
-                      <Link href="#">
-                        <MapPin className="size-6" />
-                      </Link>
-                    </DockIcon>
-                    <DockIcon>
-                      <Link href="tel:+911234567890">
-                        <Phone className="size-6" />
-                      </Link>
-                    </DockIcon>
-                    <DockIcon>
-                      <Link href="mailto:hello@pixelkliq.com">
-                        <Mail className="size-6" />
-                      </Link>
-                    </DockIcon>
-                  </Dock>
+                  <SocialLinks socials={socials} />
                 </div>
             </div>
         </div>
