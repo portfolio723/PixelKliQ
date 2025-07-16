@@ -4,7 +4,7 @@ import React from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { AnimatedGroup } from '@/components/ui/animated-group'
-import { SparklesCore } from '@/components/ui/sparkles'
+import { Tiles } from '@/components/ui/tiles'
 
 const transitionVariants = {
     item: {
@@ -31,15 +31,11 @@ export default function Hero() {
         <main className="overflow-hidden" id="home">
             <section>
                 <div className="relative h-[600px] md:h-[700px]">
-                        <div className="w-full absolute inset-0 h-full">
-                        <SparklesCore
-                            id="tsparticlesfullpage"
-                            background="transparent"
-                            minSize={0.6}
-                            maxSize={1.4}
-                            particleDensity={100}
-                            className="w-full h-full"
-                            particleColor="#FFFFFF"
+                    <div className="absolute inset-0 h-full w-full">
+                        <Tiles 
+                            rows={20}
+                            cols={20}
+                            tileSize='lg'
                         />
                     </div>
                     <div aria-hidden className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,hsl(var(--background))_75%)]" />
