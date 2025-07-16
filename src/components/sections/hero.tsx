@@ -87,7 +87,7 @@ export default function Hero() {
                                         asChild
                                         size="lg"
                                         variant="outline"
-                                        className="h-10.5 rounded-xl px-5 bg-transparent border-white/50 hover:bg-white/10 hover:text-white">
+                                        className="rounded-xl px-5 bg-transparent border-white/50 hover:bg-white/10 hover:text-white">
                                         <Link href="#contact">
                                             <span className="text-nowrap">Book a Free Consultation</span>
                                         </Link>
