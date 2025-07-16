@@ -3,6 +3,7 @@ import { Briefcase, Building, GraduationCap, HeartPulse, ShoppingCart, Cpu } fro
 import { FeatureCard } from '@/components/ui/grid-feature-cards';
 import { motion, useReducedMotion } from 'framer-motion';
 import React from 'react';
+import { TextRevealByWord } from '../ui/text-reveal';
 
 const industries = [
   {
@@ -68,9 +69,7 @@ export default function Industries() {
     <section id="industries" className="py-16 sm:py-24 bg-background">
       <div className="container mx-auto px-4">
         <AnimatedContainer className="text-center mb-12">
-          <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">
-            Industries We Empower
-          </h2>
+          <TextRevealByWord text="Industries We Empower" />
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
             We've partnered with a diverse range of clients to deliver exceptional results across various sectors.
           </p>

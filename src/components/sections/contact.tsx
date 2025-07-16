@@ -22,6 +22,7 @@ import { BorderBeam } from '@/components/magicui/border-beam';
 import { Dock, DockIcon } from '@/components/magicui/dock';
 import Link from 'next/link';
 import { FlickeringGrid } from '../ui/flickering-grid';
+import { TextRevealByWord } from '../ui/text-reveal';
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -67,9 +68,7 @@ export default function Contact() {
         />
       <div className="container relative z-10 mx-auto px-4 flex flex-col items-center">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">
-            Get in Touch
-          </h2>
+          <TextRevealByWord text="Get in Touch" />
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
             Have a project in mind or just want to say hello? We&apos;d love to hear from you.
           </p>

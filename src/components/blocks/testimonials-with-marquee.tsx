@@ -1,6 +1,7 @@
 
 import { cn } from "@/lib/utils"
 import { TestimonialCard, TestimonialAuthor } from "@/components/ui/testimonial-card"
+import { TextRevealByWord } from "../ui/text-reveal"
 
 interface TestimonialsSectionProps {
   title: string
@@ -27,9 +28,7 @@ export function TestimonialsSection({
     )}>
       <div className="mx-auto flex max-w-container flex-col items-center gap-4 text-center sm:gap-16">
         <div className="flex flex-col items-center gap-4 px-4 sm:gap-8">
-            <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">
-                {title}
-            </h2>
+            <TextRevealByWord text={title} />
             <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
                 {description}
             </p>

@@ -8,6 +8,7 @@ import {
   IconPhone,
 } from "@tabler/icons-react";
 import { Button } from "@/components/ui/button";
+import { TextRevealByWord } from "../ui/text-reveal";
 
 export function FeaturesSectionWithHoverEffects() {
   const features = [
@@ -48,9 +49,7 @@ export function FeaturesSectionWithHoverEffects() {
     <section id="services" className="py-16 sm:py-24">
        <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-            <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">
-                Our Services
-            </h2>
+            <TextRevealByWord text="Our Services" />
             <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
                 We offer a wide range of services to help you build and scale your business.
             </p>

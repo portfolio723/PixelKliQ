@@ -1,4 +1,5 @@
 import { Briefcase, MessageSquare, Scale, Users, Zap, CheckCircle } from 'lucide-react'
+import { TextRevealByWord } from '@/components/ui/text-reveal';
 
 const features = [
   {
@@ -39,7 +40,7 @@ export default function About() {
         <section id="about" className="py-16 md:py-20">
             <div className="container mx-auto max-w-5xl space-y-16 px-6">
                 <div className="relative z-10 mx-auto max-w-xl text-center">
-                    <h2 className="text-balance text-4xl font-headline font-bold lg:text-5xl">Why Choose PixelKliQ</h2>
+                    <TextRevealByWord text="Why Choose PixelKliQ" />
                     <p className="text-muted-foreground mt-4">We are more than just a service provider; we are your digital growth partner.</p>
                 </div>
                  <div className="relative mx-auto grid max-w-2xl lg:max-w-4xl divide-x divide-y border *:p-12 sm:grid-cols-2 lg:grid-cols-3">
