@@ -104,11 +104,11 @@ export default function Hero() {
                                     className="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row">
                                     <div
                                         key={1}
-                                        className="bg-foreground/10 rounded-[14px] border p-0.5">
+                                        className="rounded-[14px] p-0.5 transition-all duration-300 bg-transparent hover:bg-foreground/10">
                                         <Button
                                             asChild
                                             size="lg"
-                                            className="rounded-xl px-5 text-base">
+                                            className="rounded-xl px-5 text-base border border-border hover:bg-transparent transition-all duration-300">
                                             <Link href="#services">
                                                 <span className="text-nowrap">Explore Services</span>
                                             </Link>
@@ -205,15 +205,7 @@ const HeroHeader = () => {
                                 <Button
                                     asChild
                                     size="sm"
-                                    className={cn(isScrolled && 'lg:hidden')}>
-                                    <Link href="#contact">
-                                        <span>Contact</span>
-                                    </Link>
-                                </Button>
-                                <Button
-                                    asChild
-                                    size="sm"
-                                    className={cn(isScrolled ? 'lg:inline-flex' : 'hidden')}>
+                                    className={cn(isScrolled ? 'lg:inline-flex' : '')}>
                                     <Link href="#contact">
                                         <span>Contact</span>
                                     </Link>
