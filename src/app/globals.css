@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -99,6 +103,10 @@ body {
 
 .prose-no-margin p {
     margin: 0;
+}
+
+section {
+  scroll-margin-top: 80px;
 }
 
 @layer utilities {
