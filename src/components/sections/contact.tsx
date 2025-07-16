@@ -21,6 +21,7 @@ import { useToast } from '@/hooks/use-toast';
 import { BorderBeam } from '@/components/magicui/border-beam';
 import { Dock, DockIcon } from '@/components/magicui/dock';
 import Link from 'next/link';
+import { FlickeringGrid } from '../ui/flickering-grid';
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -55,8 +56,16 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-16 sm:py-24">
-      <div className="container mx-auto px-4 flex flex-col items-center">
+    <section id="contact" className="relative py-16 sm:py-24 overflow-hidden">
+        <FlickeringGrid
+            className="z-0 absolute inset-0 size-full"
+            squareSize={6}
+            gridGap={8}
+            color="hsl(var(--accent))"
+            maxOpacity={0.05}
+            flickerChance={0.05}
+        />
+      <div className="container relative z-10 mx-auto px-4 flex flex-col items-center">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">
             Get in Touch
