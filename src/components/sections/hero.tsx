@@ -4,7 +4,7 @@ import React from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { AnimatedGroup } from '@/components/ui/animated-group'
-import { GridPattern } from '@/components/ui/grid-pattern'
+import { Squares } from '@/components/ui/squares-background'
 import { cn } from '@/lib/utils'
 
 const transitionVariants = {
@@ -33,15 +33,13 @@ export default function Hero() {
             <section>
                 <div className="relative h-[600px] md:h-[700px]">
                     <div className="absolute inset-0 h-full w-full">
-                        <GridPattern
-                            width={30}
-                            height={30}
-                            x={-1}
-                            y={-1}
-                            className={cn(
-                                "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]",
-                                "fill-muted-foreground/30 stroke-muted-foreground/30"
-                            )}
+                        <Squares 
+                            direction="diagonal"
+                            speed={0.5}
+                            squareSize={30}
+                            borderColor="hsl(var(--muted-foreground) / 0.1)" 
+                            hoverFillColor="hsl(var(--accent))"
+                            className="[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
                         />
                     </div>
                     <div aria-hidden className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,hsl(var(--background))_75%)]" />
