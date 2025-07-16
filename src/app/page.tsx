@@ -6,15 +6,13 @@ import Industries from '@/components/sections/industries';
 import Testimonials from '@/components/sections/testimonials';
 import Faq from '@/components/sections/faq';
 import Footer from '@/components/shared/footer';
-import Header from '@/components/shared/header';
 import { ParallaxSection } from '@/components/shared/parallax-section';
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-[100dvh] bg-background text-foreground">
-      <Header />
+      <Hero />
       <main className="flex-1">
-        <Hero />
         <ParallaxSection>
           <About />
         </ParallaxSection>
