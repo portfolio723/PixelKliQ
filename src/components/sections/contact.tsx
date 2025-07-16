@@ -37,31 +37,31 @@ const formSchema = z.object({
 const socials = [
   {
     name: "Instagram",
-    image: "https://placehold.co/64x64.png",
+    image: "https://img.icons8.com/color/96/instagram-new--v1.png",
     dataAiHint: "instagram logo",
     href: "https://www.instagram.com",
   },
   {
     name: "LinkedIn",
-    image: "https://placehold.co/64x64.png",
+    image: "https://img.icons8.com/color/96/linkedin.png",
     dataAiHint: "linkedin logo",
     href: "https://www.linkedin.com",
   },
   {
     name: "Twitter",
-    image: "https://placehold.co/64x64.png",
+    image: "https://img.icons8.com/color/96/twitterx.png",
     dataAiHint: "twitter logo",
     href: "https://www.twitter.com",
   },
   {
     name: "Mail",
-    image: "https://placehold.co/64x64.png",
+    image: "https://img.icons8.com/color/96/new-post.png",
     dataAiHint: "email icon",
     href: "mailto:hello@pixelkliq.com",
   },
   {
     name: "Phone",
-    image: "https://placehold.co/64x64.png",
+    image: "https://img.icons8.com/color/96/phone.png",
     dataAiHint: "phone icon",
     href: "tel:+911234567890",
   },
