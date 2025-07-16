@@ -61,7 +61,7 @@ const socials = [
   },
   {
     name: "Phone",
-    image: "https://img.icons8.com/color/96/phone.png",
+    image: "https://img.icons8.com/?size=100&id=a8unpNrefMCC&format=png&color=000000",
     dataAiHint: "phone icon",
     href: "tel:+911234567890",
   },
