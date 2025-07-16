@@ -11,6 +11,8 @@ import {
 import { Button } from "@/components/ui/button";
 import { TextRevealByWord } from "../ui/text-reveal";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import { ParallaxSection } from "../shared/parallax-section";
 
 export function FeaturesSectionWithHoverEffects() {
   const features = [
@@ -48,7 +50,36 @@ export function FeaturesSectionWithHoverEffects() {
     },
   ];
   return (
-    <section id="services" className="py-16 sm:py-24">
+    <section id="services" className="relative py-16 sm:py-24 overflow-hidden">
+       <ParallaxSection className="absolute top-0 right-0 h-full w-full -z-10">
+          <motion.div
+            className="absolute top-0 right-0"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 0.4, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <motion.div
+              animate={{ 
+                y: ["0%", "5%", "0%"],
+              }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              <Image
+                src="https://miro.medium.com/v2/resize:fit:356/format:webp/1*k-cMgo-BIeSv46lXogrEPQ.png"
+                alt="Services background image"
+                width={500}
+                height={500}
+                className="w-full h-auto max-w-[300px] md:max-w-[500px] pointer-events-none select-none"
+                data-ai-hint="abstract geometric shapes"
+              />
+            </motion.div>
+          </motion.div>
+        </ParallaxSection>
        <div className="container mx-auto px-4">
         <div className="text-center mb-12">
             <TextRevealByWord text="Our Services" />
