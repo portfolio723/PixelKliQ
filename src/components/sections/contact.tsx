@@ -17,6 +17,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Phone, Mail, MapPin, Linkedin, Twitter, Instagram } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { BorderBeam } from '@/components/magicui/border-beam';
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -62,58 +63,61 @@ export default function Contact() {
           </p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <Card>
-                <CardHeader>
-                    <CardTitle>Send us a Message</CardTitle>
-                    <CardDescription>Fill out the form and we&apos;ll get back to you.</CardDescription>
-                </CardHeader>
-                <CardContent>
-                    <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                        <FormField
-                        control={form.control}
-                        name="name"
-                        render={({ field }) => (
-                            <FormItem>
-                            <FormLabel>Name</FormLabel>
-                            <FormControl>
-                                <Input placeholder="Your Name" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                            </FormItem>
-                        )}
-                        />
-                        <FormField
-                        control={form.control}
-                        name="email"
-                        render={({ field }) => (
-                            <FormItem>
-                            <FormLabel>Email</FormLabel>
-                            <FormControl>
-                                <Input placeholder="your.email@example.com" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                            </FormItem>
-                        )}
-                        />
-                        <FormField
-                        control={form.control}
-                        name="message"
-                        render={({ field }) => (
-                            <FormItem>
-                            <FormLabel>Message</FormLabel>
-                            <FormControl>
-                                <Textarea placeholder="Tell us about your project..." className="min-h-[120px]" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                            </FormItem>
-                        )}
-                        />
-                        <Button type="submit" className="w-full font-bold uppercase tracking-wider">Send Message</Button>
-                    </form>
-                    </Form>
-                </CardContent>
-            </Card>
+            <div className="relative">
+              <Card>
+                  <BorderBeam size={250} duration={12} delay={9} />
+                  <CardHeader>
+                      <CardTitle>Send us a Message</CardTitle>
+                      <CardDescription>Fill out the form and we&apos;ll get back to you.</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                      <Form {...form}>
+                      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                          <FormField
+                          control={form.control}
+                          name="name"
+                          render={({ field }) => (
+                              <FormItem>
+                              <FormLabel>Name</FormLabel>
+                              <FormControl>
+                                  <Input placeholder="Your Name" {...field} />
+                              </FormControl>
+                              <FormMessage />
+                              </FormItem>
+                          )}
+                          />
+                          <FormField
+                          control={form.control}
+                          name="email"
+                          render={({ field }) => (
+                              <FormItem>
+                              <FormLabel>Email</FormLabel>
+                              <FormControl>
+                                  <Input placeholder="your.email@example.com" {...field} />
+                              </FormControl>
+                              <FormMessage />
+                              </FormItem>
+                          )}
+                          />
+                          <FormField
+                          control={form.control}
+                          name="message"
+                          render={({ field }) => (
+                              <FormItem>
+                              <FormLabel>Message</FormLabel>
+                              <FormControl>
+                                  <Textarea placeholder="Tell us about your project..." className="min-h-[120px]" {...field} />
+                              </FormControl>
+                              <FormMessage />
+                              </FormItem>
+                          )}
+                          />
+                          <Button type="submit" className="w-full font-bold uppercase tracking-wider">Send Message</Button>
+                      </form>
+                      </Form>
+                  </CardContent>
+              </Card>
+            </div>
             <div className="space-y-8">
                 <div>
                     <h3 className="text-2xl font-headline font-semibold text-foreground mb-4">Contact Information</h3>
