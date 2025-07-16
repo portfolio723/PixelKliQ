@@ -37,7 +37,7 @@ export default function Hero() {
                             direction="diagonal"
                             speed={0.5}
                             squareSize={30}
-                            borderColor="hsl(var(--muted-foreground) / 0.1)" 
+                            borderColor="rgba(255, 255, 255, 0.5)" 
                             hoverFillColor="hsl(var(--accent))"
                             className="[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
                         />
