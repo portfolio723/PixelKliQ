@@ -137,8 +137,8 @@ export default function Hero() {
 const menuItems = [
     { name: 'About', href: '#about' },
     { name: 'Services', href: '#services' },
+    { name: 'Industries', href: '#industries' },
     { name: 'Testimonials', href: '#testimonials' },
-    { name: 'Contact', href: '#contact' },
 ]
 
 const HeroHeader = () => {
