@@ -68,12 +68,12 @@ export default function Industries() {
   return (
     <section id="industries" className="py-16 sm:py-24 bg-background">
       <div className="container mx-auto px-4">
-        <AnimatedContainer className="text-center mb-12">
+        <div className="text-center mb-12">
           <TextRevealByWord text="Industries We Empower" />
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
             We've partnered with a diverse range of clients to deliver exceptional results across various sectors.
           </p>
-        </AnimatedContainer>
+        </div>
         <AnimatedContainer
             delay={0.4}
             className="grid grid-cols-1 divide-x divide-y divide-dashed border border-dashed sm:grid-cols-2 md:grid-cols-3 max-w-5xl mx-auto"

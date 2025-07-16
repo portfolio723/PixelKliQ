@@ -39,9 +39,9 @@ export default function About() {
     return (
         <section id="about" className="py-16 md:py-20">
             <div className="container mx-auto max-w-5xl space-y-16 px-6">
-                <div className="text-center">
+                <div className="text-center mb-12">
                     <TextRevealByWord text="Why Choose PixelKliQ" />
-                    <p className="text-muted-foreground mt-4 max-w-xl mx-auto">We are more than just a service provider; we are your digital growth partner.</p>
+                    <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">We are more than just a service provider; we are your digital growth partner.</p>
                 </div>
                  <div className="relative mx-auto grid max-w-2xl lg:max-w-4xl divide-x divide-y border *:p-12 sm:grid-cols-2 lg:grid-cols-3">
                     {features.map((feature) => (
