@@ -1,3 +1,4 @@
+
 import About from '@/components/sections/about';
 import Contact from '@/components/sections/contact';
 import { FeaturesSectionWithHoverEffects } from '@/components/blocks/feature-section-with-hover-effects';
@@ -12,7 +13,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-[100dvh] bg-background text-foreground">
       <Hero />
-      <main className="flex-1">
+      <main className="flex-1 mt-16">
         <ParallaxSection>
           <About />
         </ParallaxSection>
