@@ -69,7 +69,7 @@ export default function Contact() {
       <div className="container relative z-10 mx-auto px-4 flex flex-col items-center">
         <div className="text-center mb-12">
           <TextRevealByWord text="Get in Touch" />
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+          <p className="mt-2 max-w-2xl mx-auto text-lg text-muted-foreground">
             Have a project in mind or just want to say hello? We&apos;d love to hear from you.
           </p>
         </div>

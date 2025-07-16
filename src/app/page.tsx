@@ -9,6 +9,7 @@ import Testimonials from '@/components/sections/testimonials';
 import Faq from '@/components/sections/faq';
 import Footer from '@/components/shared/footer';
 import { motion } from 'framer-motion';
+import Header from '@/components/shared/header';
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -34,8 +35,9 @@ const MotionSection = ({ children }: { children: React.ReactNode }) => (
 export default function Home() {
   return (
     <div className="flex flex-col min-h-[100dvh] bg-background text-foreground overflow-x-hidden">
+      <Header />
       <Hero />
-      <main className="flex-1 mt-16">
+      <main className="flex-1">
         <MotionSection>
           <About />
         </MotionSection>
