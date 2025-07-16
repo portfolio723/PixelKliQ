@@ -1,108 +1,59 @@
-"use client";
+import { Briefcase, MessageSquare, Scale, Users, Zap, CheckCircle } from 'lucide-react'
 
-import { useState, useEffect, useRef } from 'react';
-import { Card, CardContent } from "@/components/ui/card";
-import { Users, FolderKanban, Building2, Rocket, Eye, Workflow } from "lucide-react";
-import { cn } from '@/lib/utils';
-
-const Counter = ({ value, duration = 2000 }: { value: number, duration?: number }) => {
-  const [count, setCount] = useState(0);
-  const ref = useRef<HTMLSpanElement>(null);
-  const [inView, setInView] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setInView(true);
-        }
-      },
-      {
-        threshold: 0.1,
-      }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
-    };
-  }, []);
-  
-  useEffect(() => {
-    if (inView) {
-      let start = 0;
-      const end = value;
-      const increment = end / (duration / 16); 
-
-      const timer = setInterval(() => {
-        start += increment;
-        if (start >= end) {
-          setCount(end);
-          clearInterval(timer);
-        } else {
-          setCount(Math.ceil(start));
-        }
-      }, 16);
-
-      return () => clearInterval(timer);
-    }
-  }, [value, duration, inView]);
-
-  return <span ref={ref} className="text-4xl font-bold text-foreground">{count}+</span>;
-};
-
-const coreValues = [
-    {
-        title: "Our Mission",
-        description: "To build a world where creativity, talent & tech create real-world impact.",
-        icon: <Rocket className="w-6 h-6 text-foreground" />
-    },
-    {
-        title: "Our Vision",
-        description: "To be the most trusted end-to-end digital growth partner for businesses worldwide.",
-        icon: <Eye className="w-6 h-6 text-foreground" />
-    },
-    {
-        title: "Our Approach",
-        description: "Agile | Creative | Scalable. We adapt to your needs, innovate with purpose, and build for the future.",
-        icon: <Workflow className="w-6 h-6 text-foreground" />
-    }
+const features = [
+  {
+    icon: <Briefcase className="w-4 h-4" />,
+    title: "360° Service Portfolio",
+    description: "From design to deployment, we offer a complete suite of services under one roof.",
+  },
+  {
+    icon: <Scale className="w-4 h-4" />,
+    title: "Scalable Solutions",
+    description: "We build for your future, ensuring our solutions grow with your business.",
+  },
+  {
+    icon: <Zap className="w-4 h-4" />,
+    title: "Agile + Creative Team",
+    description: "Our dynamic team blends agile methodologies with creative thinking for rapid, innovative results.",
+  },
+  {
+    icon: <Users className="w-4 h-4" />,
+    title: "In-House Experts",
+    description: "Every project is handled by our dedicated team of in-house specialists.",
+  },
+  {
+    icon: <MessageSquare className="w-4 h-4" />,
+    title: "Real-Time Collaboration",
+    description: "We work with you, keeping you in the loop at every stage of the project.",
+  },
+  {
+    icon: <CheckCircle className="w-4 h-4" />,
+    title: "Proven Results",
+    description: "Our track record speaks for itself. Check out what our clients have to say.",
+  },
 ];
 
-export default function About() {
-  return (
-    <section id="about" className="py-16 sm:py-24 bg-card/50">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">
-            Who We Are
-          </h2>
-          <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-            A digital powerhouse helping startups, enterprises & institutions scale through design thinking and innovation.
-          </p>
-        </div>
 
-        <div className="max-w-3xl mx-auto">
-            <div className="space-y-8">
-                {coreValues.map((value) => (
-                    <div key={value.title} className="flex items-start gap-4">
-                        <div className="flex-shrink-0 p-3 bg-primary/10 rounded-full">
-                           {value.icon}
+export default function About() {
+    return (
+        <section id="about" className="py-16 md:py-20">
+            <div className="container mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
+                <div className="relative z-10 mx-auto max-w-xl space-y-6 text-center md:space-y-12">
+                    <h2 className="text-balance text-4xl font-headline font-bold lg:text-5xl">Why Choose PixelKliQ</h2>
+                    <p className="text-muted-foreground">We are more than just a service provider; we are your digital growth partner.</p>
+                </div>
+                 <div className="relative mx-auto grid max-w-2xl lg:max-w-4xl divide-x divide-y border *:p-12 sm:grid-cols-2 lg:grid-cols-3">
+                    {features.map((feature) => (
+                         <div key={feature.title} className="space-y-3">
+                            <div className="flex items-center gap-2 text-foreground">
+                                {feature.icon}
+                                <h3 className="text-sm font-medium">{feature.title}</h3>
+                            </div>
+                            <p className="text-sm text-muted-foreground">{feature.description}</p>
                         </div>
-                        <div>
-                            <h3 className="text-xl font-headline font-semibold">{value.title}</h3>
-                            <p className="mt-1 text-muted-foreground">{value.description}</p>
-                        </div>
-                    </div>
-                ))}
+                    ))}
+                 </div>
             </div>
-        </div>
-      </div>
-    </section>
-  );
+        </section>
+    )
 }
