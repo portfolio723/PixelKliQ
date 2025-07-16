@@ -121,7 +121,7 @@ export default function Hero() {
                                         variant="ghost"
                                         className="h-10.5 rounded-xl px-5">
                                         <Link href="#contact">
-                                            <span className="text-nowrap">Login</span>
+                                            <span className="text-nowrap">Book a Free Consultation</span>
                                         </Link>
                                     </Button>
                                 </AnimatedGroup>
