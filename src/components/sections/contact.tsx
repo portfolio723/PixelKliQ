@@ -57,10 +57,10 @@ export default function Contact() {
       <div className="container relative z-10 mx-auto px-4 flex flex-col items-center">
         
         <div className="w-full max-w-xl">
-            <Card className="p-8 sm:p-10 border rounded-2xl shadow-md">
+            <Card className="p-8 sm:p-10 border rounded-2xl shadow-md bg-card">
               <div className="flex flex-col items-center text-center mb-8">
                 <Badge variant="outline" className="mb-4 bg-blue-100 text-blue-600 border-transparent uppercase tracking-wide">Contact</Badge>
-                <h2 className="text-2xl font-semibold">Got a project in mind?<br/>Let's get in touch.</h2>
+                <h2 className="text-2xl font-semibold text-card-foreground">Got a project in mind?<br/>Let's get in touch.</h2>
               </div>
               <CardContent className="p-0">
                   <Form {...form}>
@@ -71,9 +71,9 @@ export default function Contact() {
                         name="name"
                         render={({ field }) => (
                             <FormItem>
-                            <FormLabel className="block text-xs font-semibold mb-1">Name</FormLabel>
+                            <FormLabel className="block text-xs font-semibold mb-1 text-muted-foreground">Name</FormLabel>
                             <FormControl>
-                                <Input placeholder="Your name *" {...field} className="w-full border-b border-foreground focus:outline-none focus:border-foreground/80 p-2 bg-transparent h-auto" />
+                                <Input placeholder="Your name *" {...field} className="w-full border-0 border-b border-foreground bg-transparent rounded-none px-0 focus-visible:ring-0 focus-visible:ring-offset-0" />
                             </FormControl>
                             <FormMessage />
                             </FormItem>
@@ -84,9 +84,9 @@ export default function Contact() {
                         name="email"
                         render={({ field }) => (
                             <FormItem>
-                            <FormLabel className="block text-xs font-semibold mb-1">Email</FormLabel>
+                            <FormLabel className="block text-xs font-semibold mb-1 text-muted-foreground">Email</FormLabel>
                             <FormControl>
-                                <Input placeholder="Email address *" {...field} className="w-full border-b border-foreground focus:outline-none focus:border-foreground/80 p-2 bg-transparent h-auto" />
+                                <Input placeholder="Email address *" {...field} className="w-full border-0 border-b border-foreground bg-transparent rounded-none px-0 focus-visible:ring-0 focus-visible:ring-offset-0" />
                             </FormControl>
                             <FormMessage />
                             </FormItem>
@@ -100,9 +100,9 @@ export default function Contact() {
                         name="message"
                         render={({ field }) => (
                             <FormItem>
-                            <FormLabel className="block text-xs font-semibold mb-1">Message</FormLabel>
+                            <FormLabel className="block text-xs font-semibold mb-1 text-muted-foreground">Message</FormLabel>
                             <FormControl>
-                                <Textarea placeholder="Tell me about your project *" className="w-full border-b border-foreground focus:outline-none focus:border-foreground/80 p-2 bg-transparent min-h-0" rows={4} {...field} />
+                                <Textarea placeholder="Tell me about your project *" className="w-full border-0 border-b border-foreground bg-transparent rounded-none px-0 min-h-0 focus-visible:ring-0 focus-visible:ring-offset-0" rows={4} {...field} />
                             </FormControl>
                             <FormMessage />
                             </FormItem>
@@ -110,7 +110,7 @@ export default function Contact() {
                         />
                       </div>
                       <div className="text-center">
-                        <Button type="submit" className="bg-foreground text-background px-6 py-3 rounded-md shadow hover:bg-foreground/90 transition h-auto">Submit</Button>
+                        <Button type="submit" variant="outline" className="bg-background text-foreground px-6 py-3 rounded-md shadow hover:bg-accent transition h-auto">Submit</Button>
                       </div>
                   </form>
                   </Form>
