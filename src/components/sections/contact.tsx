@@ -17,17 +17,21 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
-import { BorderBeam } from '@/components/magicui/border-beam';
-import { FlickeringGrid } from '../ui/flickering-grid';
 import { TextRevealByWord } from '../ui/text-reveal';
 import { SocialLinks } from '@/components/ui/social-links';
 
 const formSchema = z.object({
-  name: z.string().min(2, {
-    message: 'Name must be at least 2 characters.',
+  firstName: z.string().min(2, {
+    message: 'First name must be at least 2 characters.',
+  }),
+  lastName: z.string().min(2, {
+    message: 'Last name must be at least 2 characters.',
   }),
   email: z.string().email({
     message: 'Please enter a valid email address.',
+  }),
+  subject: z.string().min(5, {
+    message: 'Subject must be at least 5 characters.',
   }),
   message: z.string().min(10, {
     message: 'Message must be at least 10 characters.',
@@ -72,8 +76,10 @@ export default function Contact() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name: '',
+      firstName: '',
+      lastName: '',
       email: '',
+      subject: '',
       message: '',
     },
   });
@@ -89,14 +95,6 @@ export default function Contact() {
 
   return (
     <section id="contact" className="relative py-16 sm:py-24 overflow-hidden">
-        <FlickeringGrid
-            className="z-0 absolute inset-0 size-full"
-            squareSize={6}
-            gridGap={8}
-            color="hsl(var(--accent))"
-            maxOpacity={0.05}
-            flickerChance={0.05}
-        />
       <div className="container relative z-10 mx-auto px-4 flex flex-col items-center">
         <div className="text-center mb-12">
           <TextRevealByWord text="Get in Touch" />
@@ -105,10 +103,9 @@ export default function Contact() {
           </p>
         </div>
         
-        <div className="w-full max-w-lg">
+        <div className="w-full max-w-2xl">
             <div className="relative">
               <Card>
-                  <BorderBeam size={250} duration={12} delay={9} />
                   <CardHeader>
                       <CardTitle>Send us a Message</CardTitle>
                       <CardDescription>Fill out the form and we&apos;ll get back to you.</CardDescription>
@@ -116,19 +113,34 @@ export default function Contact() {
                   <CardContent>
                       <Form {...form}>
                       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                          <FormField
-                          control={form.control}
-                          name="name"
-                          render={({ field }) => (
-                              <FormItem>
-                              <FormLabel>Name</FormLabel>
-                              <FormControl>
-                                  <Input placeholder="Your Name" {...field} />
-                              </FormControl>
-                              <FormMessage />
-                              </FormItem>
-                          )}
-                          />
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <FormField
+                            control={form.control}
+                            name="firstName"
+                            render={({ field }) => (
+                                <FormItem>
+                                <FormLabel>First Name</FormLabel>
+                                <FormControl>
+                                    <Input placeholder="Adam" {...field} />
+                                </FormControl>
+                                <FormMessage />
+                                </FormItem>
+                            )}
+                            />
+                            <FormField
+                            control={form.control}
+                            name="lastName"
+                            render={({ field }) => (
+                                <FormItem>
+                                <FormLabel>Last Name</FormLabel>
+                                <FormControl>
+                                    <Input placeholder="Smith" {...field} />
+                                </FormControl>
+                                <FormMessage />
+                                </FormItem>
+                            )}
+                            />
+                          </div>
                           <FormField
                           control={form.control}
                           name="email"
@@ -136,7 +148,20 @@ export default function Contact() {
                               <FormItem>
                               <FormLabel>Email</FormLabel>
                               <FormControl>
-                                  <Input placeholder="your.email@example.com" {...field} />
+                                  <Input placeholder="youremail@gmail.com" {...field} />
+                              </FormControl>
+                              <FormMessage />
+                              </FormItem>
+                          )}
+                          />
+                          <FormField
+                          control={form.control}
+                          name="subject"
+                          render={({ field }) => (
+                              <FormItem>
+                              <FormLabel>Subject</FormLabel>
+                              <FormControl>
+                                  <Input placeholder="Subject here" {...field} />
                               </FormControl>
                               <FormMessage />
                               </FormItem>
@@ -147,15 +172,15 @@ export default function Contact() {
                           name="message"
                           render={({ field }) => (
                               <FormItem>
-                              <FormLabel>Message</FormLabel>
+                              <FormLabel>Your Message</FormLabel>
                               <FormControl>
-                                  <Textarea placeholder="Tell us about your project..." className="min-h-[120px]" {...field} />
+                                  <Textarea placeholder="Write you message" className="min-h-[120px]" {...field} />
                               </FormControl>
                               <FormMessage />
                               </FormItem>
                           )}
                           />
-                          <Button type="submit" className="w-full font-bold uppercase tracking-wider">Send Message</Button>
+                          <Button type="submit" className="w-full font-bold uppercase tracking-wider">Submit</Button>
                       </form>
                       </Form>
                   </CardContent>
