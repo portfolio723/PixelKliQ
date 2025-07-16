@@ -216,7 +216,7 @@ const HeroHeader = () => {
                                     size="sm"
                                     className={cn(isScrolled && 'lg:hidden')}>
                                     <Link href="#contact">
-                                        <span>Sign Up</span>
+                                        <span>Contact</span>
                                     </Link>
                                 </Button>
                                 <Button
