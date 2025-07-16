@@ -239,7 +239,7 @@ const HeroHeader = () => {
 const Logo = ({ className }: { className?: string }) => {
     return (
         <Image
-            src="https://firebasestorage.googleapis.com/v0/b/genkit-llm-3a647.appspot.com/o/images%2F1723189914441-26c927f9-8d77-4468-a4a6-4448a3e790f9?alt=media&token=8d6a71f0-410a-4286-90f9-a36c53e83921"
+            src="https://miro.medium.com/v2/resize:fit:828/format:webp/1*jna_8wb5YV4qpHjN2WHTOA.png"
             alt="PixelKliQ Logo"
             width={120}
             height={28}
