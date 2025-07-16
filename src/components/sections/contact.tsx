@@ -16,7 +16,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Phone, Mail, MapPin, Linkedin, Twitter, Instagram } from 'lucide-react';
+import { Phone, Mail, MapPin } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { BorderBeam } from '@/components/magicui/border-beam';
 
@@ -138,14 +138,6 @@ export default function Contact() {
                         <Mail className="w-6 h-6 text-foreground" />
                         <a href="mailto:hello@pixelkliq.com" className="hover:text-primary transition-colors">hello@pixelkliq.com</a>
                     </div>
-                </div>
-            </div>
-            <div>
-                <h3 className="text-2xl font-headline font-semibold text-foreground mb-4">Follow Us</h3>
-                <div className="flex justify-center space-x-4">
-                    <a href="#" className="p-2 rounded-full bg-secondary hover:bg-primary transition-colors text-foreground hover:text-primary-foreground"><Twitter className="w-6 h-6" /></a>
-                    <a href="#" className="p-2 rounded-full bg-secondary hover:bg-primary transition-colors text-foreground hover:text-primary-foreground"><Linkedin className="w-6 h-6" /></a>
-                    <a href="#" className="p-2 rounded-full bg-secondary hover:bg-primary transition-colors text-foreground hover:text-primary-foreground"><Instagram className="w-6 h-6" /></a>
                 </div>
             </div>
         </div>
