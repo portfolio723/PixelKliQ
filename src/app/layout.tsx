@@ -6,6 +6,7 @@ import { Toaster } from "@/components/ui/toaster"
 import { ThemeProvider } from 'next-themes';
 import { Inter, Source_Code_Pro } from 'next/font/google';
 import { cn } from '@/lib/utils';
+import { SmoothCursor } from '@/components/magicui/smooth-cursor';
 
 const fontBody = Inter({
   subsets: ['latin'],
@@ -42,6 +43,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
         >
+            <SmoothCursor />
             {children}
             <Toaster />
         </ThemeProvider>
