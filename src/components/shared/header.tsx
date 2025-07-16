@@ -1,21 +1,19 @@
-
 'use client';
-import { useState, useEffect } from 'react';
+import React from 'react';
 import Link from 'next/link';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetHeader, SheetTitle } from '@/components/ui/sheet';
-import { Menu } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 
-const navItems = [
+const menuItems = [
   { href: '#home', label: 'Home' },
   { href: '#about', label: 'About' },
   { href: '#services', label: 'Services' },
   { href: '#industries', label: 'Industries' },
   { href: '#testimonials', label: 'Testimonials' },
   { href: '#faq', label: 'FAQ' },
-];
+]
 
 const Logo = ({ className }: { className?: string }) => {
     return (
@@ -29,137 +27,84 @@ const Logo = ({ className }: { className?: string }) => {
     )
 }
 
-const NavLink = ({
-  href,
-  label,
-  activeSection,
-  isMobile = false,
-  onClick,
-}: {
-  href: string;
-  label: string;
-  activeSection: string;
-  isMobile?: boolean;
-  onClick: () => void;
-}) => {
-  const linkContent = (
-    <span
-      className={cn(
-        'text-base font-medium transition-colors hover:text-primary',
-        activeSection === href.substring(1)
-          ? 'text-primary'
-          : 'text-muted-foreground',
-        isMobile && 'text-lg'
-      )}
-    >
-      {label}
-    </span>
-  );
-
-  if (isMobile) {
-    return (
-      <SheetClose asChild>
-        <Link href={href} passHref onClick={onClick}>
-          {linkContent}
-        </Link>
-      </SheetClose>
-    );
-  }
-
-  return (
-    <Link href={href} passHref onClick={onClick}>
-      {linkContent}
-    </Link>
-  );
-};
-
 export default function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [menuState, setMenuState] = React.useState(false)
+    const [isScrolled, setIsScrolled] = React.useState(false)
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-      
-      const sections = navItems.map(item => document.getElementById(item.href.substring(1)));
-      let currentSection = 'home';
-      
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = sections[i];
-        if (section && window.scrollY >= section.offsetTop - 100) {
-          currentSection = section.id;
-          break;
+    React.useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 50)
         }
-      }
-      setActiveSection(currentSection);
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); 
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
+    return (
+        <header className="sticky top-0 z-50">
+            <nav
+                data-state={menuState ? 'active' : 'inactive'}
+                className="fixed z-20 w-full px-2 group">
+                <div className={cn('mx-auto mt-2 max-w-6xl px-6 transition-all duration-300 lg:px-12', isScrolled && 'bg-background/50 max-w-4xl rounded-2xl border backdrop-blur-lg lg:px-5')}>
+                    <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
+                        <div className="flex w-full justify-between lg:w-auto">
+                            <Link
+                                href="#home"
+                                aria-label="home"
+                                className="flex items-center space-x-2">
+                                <Logo />
+                            </Link>
 
-  const closeMenu = () => setIsMenuOpen(false);
+                            <button
+                                onClick={() => setMenuState(!menuState)}
+                                aria-label={menuState == true ? 'Close Menu' : 'Open Menu'}
+                                className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden">
+                                <Menu className={cn("m-auto size-6 duration-200", menuState && "scale-0 opacity-0 rotate-180")} />
+                                <X className={cn("absolute inset-0 m-auto size-6 duration-200", !menuState && "scale-0 opacity-0 -rotate-180")} />
+                            </button>
+                        </div>
 
-  const NavLinks = ({isMobile = false}: {isMobile?: boolean}) => (
-    <nav className={cn(
-      "flex items-center gap-6",
-      isMobile && "flex-col items-start gap-4"
-    )}>
-      {navItems.map((item) => (
-        <NavLink
-          key={item.label}
-          href={item.href}
-          label={item.label}
-          activeSection={activeSection}
-          isMobile={isMobile}
-          onClick={closeMenu}
-        />
-      ))}
-    </nav>
-  );
+                        <div className="absolute inset-0 m-auto hidden size-fit lg:block">
+                            <ul className="flex gap-8 text-sm">
+                                {menuItems.map((item, index) => (
+                                    <li key={index}>
+                                        <Link
+                                            href={item.href}
+                                            className="text-muted-foreground hover:text-foreground block duration-150">
+                                            <span>{item.label}</span>
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
 
-  return (
-    <header className={cn(
-      "sticky top-0 z-50 w-full transition-all duration-300",
-      isScrolled ? "bg-background/80 backdrop-blur-sm border-b border-border" : "bg-transparent"
-    )}>
-      <div className="container mx-auto px-4 h-20 flex items-center justify-between">
-        <Link href="#home" className="flex items-center gap-2">
-          <Logo />
-        </Link>
-        <div className="hidden md:flex items-center gap-6">
-          <NavLinks />
-          <Button asChild>
-            <a href="#contact">Contact Us</a>
-          </Button>
-        </div>
-        <div className="md:hidden">
-          <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6" />
-                <span className="sr-only">Open Menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-[280px] p-0">
-               <SheetHeader className="p-6 pb-0">
-                  <SheetTitle className="sr-only">Mobile Navigation Menu</SheetTitle>
-                </SheetHeader>
-              <div className="p-6 h-full flex flex-col">
-                <Link href="#home" className="flex items-center gap-2 mb-8" onClick={closeMenu}>
-                  <Logo />
-                </Link>
-                <NavLinks isMobile />
-                <Button asChild className="mt-auto">
-                  <a href="#contact" onClick={closeMenu}>Contact Us</a>
-                </Button>
-              </div>
-            </SheetContent>
-          </Sheet>
-        </div>
-      </div>
-    </header>
-  );
+                        <div className={cn("mb-6 w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent", menuState ? "bg-background block" : "hidden")}>
+                            <div className="lg:hidden">
+                                <ul className="space-y-6 text-base">
+                                    {menuItems.map((item, index) => (
+                                        <li key={index}>
+                                            <Link
+                                                href={item.href}
+                                                onClick={() => setMenuState(false)}
+                                                className="text-muted-foreground hover:text-foreground block duration-150">
+                                                <span>{item.label}</span>
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
+                                <Button
+                                    asChild
+                                    size="sm"
+                                    className={cn('lg:inline-flex')}>
+                                    <Link href="#contact" onClick={() => setMenuState(false)}>
+                                        <span>Contact Us</span>
+                                    </Link>
+                                </Button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    )
 }
