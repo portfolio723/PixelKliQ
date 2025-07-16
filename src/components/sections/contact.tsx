@@ -59,7 +59,7 @@ export default function Contact() {
         <div className="w-full max-w-xl">
             <Card className="p-8 sm:p-10 border rounded-2xl shadow-md bg-card">
               <div className="flex flex-col items-center text-center mb-8">
-                <Badge variant="outline" className="mb-4 bg-blue-100 text-blue-600 border-transparent uppercase tracking-wide">Contact</Badge>
+                <Badge variant="outline" className="mb-4 bg-transparent text-foreground border-transparent uppercase tracking-wide">Contact</Badge>
                 <h2 className="text-2xl font-semibold text-card-foreground">Got a project in mind?<br/>Let's get in touch.</h2>
               </div>
               <CardContent className="p-0">
