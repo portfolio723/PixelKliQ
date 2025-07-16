@@ -57,7 +57,7 @@ export default function Contact() {
       <div className="container relative z-10 mx-auto px-4 flex flex-col items-center">
         
         <div className="w-full max-w-xl">
-            <Card className="p-8 sm:p-10 border shadow-md bg-card">
+            <Card className="p-8 sm:p-10 border shadow-md bg-card rounded-none">
               <div className="flex flex-col items-center text-center mb-8">
                 <Badge variant="outline" className="mb-4 bg-transparent text-foreground border-transparent uppercase tracking-wide">Contact</Badge>
                 <h2 className="text-2xl font-semibold text-card-foreground">Got a project in mind?<br/>Let's get in touch.</h2>
@@ -110,7 +110,7 @@ export default function Contact() {
                         />
                       </div>
                       <div className="text-center">
-                        <Button type="submit" variant="outline" className="bg-background text-foreground px-6 py-3 shadow hover:bg-accent transition h-auto">Submit</Button>
+                        <Button type="submit" variant="outline" className="bg-background text-foreground px-6 py-3 shadow hover:bg-accent transition h-auto rounded-none">Submit</Button>
                       </div>
                   </form>
                   </Form>
