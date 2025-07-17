@@ -7,7 +7,7 @@ import { Features } from "../blocks/features-1";
 
 const About = () => {
     return (
-        <section id="about" className="py-16 sm:py-24">
+        <section id="about" className="py-8 sm:py-16">
             <div className="container mx-auto px-4">
                 <div className="text-center">
                     <div className="max-w-3xl mx-auto">
@@ -40,6 +40,7 @@ const About = () => {
                         </GridPatternCardBody>
                     </GridPatternCard>
                 </div>
+                <Features />
                 <div className="mt-8 max-w-4xl mx-auto">
                     <GridPatternCard>
                         <GridPatternCardBody>
@@ -52,7 +53,6 @@ const About = () => {
                         </GridPatternCardBody>
                     </GridPatternCard>
                 </div>
-                <Features />
             </div>
         </section>
     );
