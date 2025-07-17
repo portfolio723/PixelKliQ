@@ -35,6 +35,15 @@ const footerLinks: FooterSection[] = [
             { title: 'Phone', href: 'tel:+910000000000' },
 		],
 	},
+    {
+        label: 'Social',
+        links: [
+            { title: 'LinkedIn', href: '#' },
+            { title: 'Twitter', href: '#' },
+            { title: 'Instagram', href: '#' },
+            { title: 'Youtube', href: '#' },
+        ]
+    },
 	{
 		label: 'Legal',
 		links: [
