@@ -42,11 +42,11 @@ export function Features() {
                                 <Sparkles className="size-6" aria-hidden />
                             </CardDecorator>
 
-                            <h3 className="mt-6 font-medium">In-House</h3>
+                            <h3 className="mt-6 font-medium">Creative</h3>
                         </CardHeader>
 
                         <CardContent>
-                            <p className="text-sm text-muted-foreground">Every project is handled by our dedicated team of in-house specialists.</p>
+                            <p className="text-sm text-muted-foreground">We design with purpose and innovation.</p>
                         </CardContent>
                     </Card>
                 </div>
