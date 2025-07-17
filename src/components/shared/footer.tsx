@@ -22,14 +22,15 @@ const footerLinks: FooterSection[] = [
 		label: 'Navigate',
 		links: [
 			{ title: 'Home', href: '#home' },
+			{ title: 'About', href: '#about' },
 			{ title: 'Services', href: '#services' },
+			{ title: 'FAQ', href: '#faq' },
+			{ title: 'Testimonials', href: '#testimonials' },
 		],
 	},
 	{
 		label: 'Company',
 		links: [
-			{ title: 'Testimonials', href: '#testimonials' },
-			{ title: 'FAQ', href: '#faq' },
 			{ title: 'Contact', href: '#contact' },
 		],
 	},
