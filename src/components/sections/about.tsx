@@ -40,8 +40,7 @@ const About = () => {
                         </GridPatternCardBody>
                     </GridPatternCard>
                 </div>
-                <Features />
-                <div className="mt-8 max-w-4xl mx-auto">
+                 <div className="mt-8 max-w-4xl mx-auto">
                     <GridPatternCard>
                         <GridPatternCardBody>
                             <h3 className="font-medium mb-1 text-foreground">
@@ -53,6 +52,7 @@ const About = () => {
                         </GridPatternCardBody>
                     </GridPatternCard>
                 </div>
+                <Features />
             </div>
         </section>
     );
