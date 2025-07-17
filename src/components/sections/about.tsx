@@ -24,7 +24,7 @@ const About = () => {
                 <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                     <GridPatternCard>
                         <GridPatternCardBody>
-                            <h3 className="text-lg font-bold mb-1 text-foreground">
+                            <h3 className="font-medium mb-1 text-foreground">
                                 Our Mission
                             </h3>
                             <p className="text-wrap text-sm text-foreground/60">
@@ -34,7 +34,7 @@ const About = () => {
                     </GridPatternCard>
                     <GridPatternCard>
                         <GridPatternCardBody>
-                            <h3 className="text-lg font-bold mb-1 text-foreground">
+                            <h3 className="font-medium mb-1 text-foreground">
                                 Our Vision
                             </h3>
                             <p className="text-wrap text-sm text-foreground/60">
