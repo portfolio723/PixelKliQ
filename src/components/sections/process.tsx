@@ -44,7 +44,7 @@ export default function Process() {
             <div className="container mx-auto px-4">
                 <div className="text-center">
                     <TextRevealByWord text="Our Process" />
-                    <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+                    <p className="max-w-2xl mx-auto text-lg text-muted-foreground">
                         Simple, Strategic, Seamless
                     </p>
                 </div>
