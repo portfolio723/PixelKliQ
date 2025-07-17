@@ -14,11 +14,11 @@ export function Features() {
                                 <Zap className="size-6" aria-hidden />
                             </CardDecorator>
 
-                            <h3 className="mt-6 font-medium">Customizable</h3>
+                            <h3 className="mt-6 font-medium">Agile</h3>
                         </CardHeader>
 
                         <CardContent>
-                            <p className="text-sm text-muted-foreground">Extensive customization options, allowing you to tailor every aspect to meet your specific needs.</p>
+                            <p className="text-sm text-muted-foreground">We iterate fast and stay flexible to deliver innovative results quickly.</p>
                         </CardContent>
                     </Card>
 
@@ -28,11 +28,11 @@ export function Features() {
                                 <Settings2 className="size-6" aria-hidden />
                             </CardDecorator>
 
-                            <h3 className="mt-6 font-medium">You have full control</h3>
+                            <h3 className="mt-6 font-medium">Scalable</h3>
                         </CardHeader>
 
                         <CardContent>
-                            <p className="text-sm text-muted-foreground">From design elements to functionality, you have complete control to create a unique and personalized experience.</p>
+                            <p className="text-sm text-muted-foreground">We build for your future, ensuring our solutions grow with your business.</p>
                         </CardContent>
                     </Card>
 
@@ -42,11 +42,11 @@ export function Features() {
                                 <Sparkles className="size-6" aria-hidden />
                             </CardDecorator>
 
-                            <h3 className="mt-6 font-medium">Powered By AI</h3>
+                            <h3 className="mt-6 font-medium">In-House</h3>
                         </CardHeader>
 
                         <CardContent>
-                            <p className="text-sm text-muted-foreground">Elements to functionality, you have complete control to create a unique experience.</p>
+                            <p className="text-sm text-muted-foreground">Every project is handled by our dedicated team of in-house specialists.</p>
                         </CardContent>
                     </Card>
                 </div>
