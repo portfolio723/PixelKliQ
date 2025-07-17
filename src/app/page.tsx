@@ -11,6 +11,7 @@ import { motion } from 'framer-motion';
 import Header from '@/components/shared/header';
 import WhyUs from '@/components/sections/why-us';
 import About from '@/components/sections/about';
+import Process from '@/components/sections/process';
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -50,6 +51,9 @@ export default function Home() {
         </MotionSection>
         <MotionSection>
           <Industries />
+        </MotionSection>
+        <MotionSection>
+          <Process />
         </MotionSection>
         <MotionSection>
           <Testimonials />
