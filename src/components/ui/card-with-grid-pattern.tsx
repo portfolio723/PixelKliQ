@@ -35,8 +35,8 @@ export function GridPatternCard({
       )}>
         <div className={cn(
           "size-full bg-gradient-to-tr",
-          "from-white via-white/[0.85] to-white",
-          "dark:from-zinc-950 dark:via-zinc-950/[.85] dark:to-zinc-950",
+          "from-white via-white/[0.5] to-white",
+          "dark:from-zinc-950 dark:via-zinc-950/[.5] dark:to-zinc-950",
           gradientClassName
         )}>
           {children}
