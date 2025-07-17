@@ -20,7 +20,7 @@ export function GridPatternCard({
       className={cn(
         "border w-full rounded-md overflow-hidden",
         "bg-background",
-        "border-zinc-200 dark:border-zinc-800",
+        "border-border",
         className
       )}
       initial={{ opacity: 0, y: 20 }}
@@ -28,15 +28,11 @@ export function GridPatternCard({
       viewport={{ once: true, amount: 0.5 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
-      <div className={cn(
-        "size-full bg-repeat bg-[length:50px_50px]",
-        "bg-square-pattern-light dark:bg-square-pattern",
-        patternClassName
-      )}>
+      <div className={cn("relative size-full", patternClassName)}>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:24px_24px] opacity-20 [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
         <div className={cn(
           "size-full bg-gradient-to-tr",
           "from-background via-background/50 to-background",
-          "dark:from-background dark:via-background/50 dark:to-background",
           gradientClassName
         )}>
           {children}
