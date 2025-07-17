@@ -5,7 +5,7 @@ import type { ComponentProps, ReactNode } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
-import { Mail, Phone } from 'lucide-react';
+import { Mail, Phone, Youtube, Twitter, Facebook, Instagram, Linkedin } from 'lucide-react';
 
 interface FooterLink {
 	title: string;
@@ -39,10 +39,11 @@ const footerLinks: FooterSection[] = [
     {
         label: 'Social',
         links: [
-            { title: 'LinkedIn', href: '#' },
-            { title: 'Twitter', href: '#' },
-            { title: 'Instagram', href: '#' },
-            { title: 'Youtube', href: '#' },
+            { title: 'LinkedIn', href: 'https://www.linkedin.com/company/pixelkliq/', icon: Linkedin },
+            { title: 'Twitter', href: 'https://x.com/PixelKliQ', icon: Twitter },
+            { title: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61577039267314', icon: Facebook },
+            { title: 'Instagram', href: 'https://www.instagram.com/pixelkliq?igsh=MWhzZmkxaHB5NzhmeA==', icon: Instagram },
+            { title: 'Youtube', href: 'https://www.youtube.com/@PixelKliQ', icon: Youtube },
         ]
     },
 	{
