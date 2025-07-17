@@ -1,6 +1,6 @@
 'use client';
 import { TextRevealByWord } from '@/components/ui/text-reveal';
-import { Target, Eye } from 'lucide-react';
+import { IconHover3D } from '@/components/ui/icon-3d-hover';
 
 export default function About() {
   return (
@@ -17,25 +17,15 @@ export default function About() {
                 PixelKLiQ is a multidisciplinary digital partner built to scale ideas into powerful outcomes. Based in India, we work with startups, enterprises, and institutions across the globe to design, develop, and deliver meaningful solutions that drive business transformation.
             </p>
         </div>
-        <div className="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
-            <div className="text-center p-6 border rounded-lg">
-                <div className="inline-flex items-center justify-center bg-primary text-primary-foreground rounded-full p-3 mb-4">
-                    <Target className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-semibold mb-2">Our Mission</h3>
-                <p className="text-muted-foreground">
-                    To build a world where creativity, talent, and technology combine to create real-world impact.
-                </p>
-            </div>
-            <div className="text-center p-6 border rounded-lg">
-                <div className="inline-flex items-center justify-center bg-primary text-primary-foreground rounded-full p-3 mb-4">
-                     <Eye className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-semibold mb-2">Our Vision</h3>
-                <p className="text-muted-foreground">
-                    To be the most trusted partner for end-to-end digital growth in the modern era.
-                </p>
-            </div>
+        <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-10 max-w-5xl mx-auto justify-items-center">
+            <IconHover3D 
+              heading="Our Mission"
+              text="To build a world where creativity, talent, and technology combine to create real-world impact."
+            />
+            <IconHover3D 
+              heading="Our Vision"
+              text="To be the most trusted partner for end-to-end digital growth in the modern era."
+            />
         </div>
       </div>
     </section>
