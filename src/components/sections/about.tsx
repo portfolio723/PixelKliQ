@@ -1,4 +1,3 @@
-
 'use client';
 import { TextRevealByWord } from '@/components/ui/text-reveal';
 import { Target, Eye } from 'lucide-react';
