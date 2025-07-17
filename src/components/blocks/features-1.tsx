@@ -32,7 +32,7 @@ export function Features() {
                         </CardHeader>
 
                         <CardContent>
-                            <p className="text-sm text-muted-foreground">We build for your future, ensuring our solutions grow with your business.</p>
+                            <p className="text-sm text-muted-foreground">We build future-ready solutions</p>
                         </CardContent>
                     </Card>
 
@@ -57,7 +57,7 @@ export function Features() {
 
 const CardDecorator = ({ children }: { children: ReactNode }) => (
     <div aria-hidden className="relative mx-auto size-36 [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]">
-        <div className="absolute inset-0 [--border:black] dark:[--border:white] bg-[linear-gradient(to_right,var(--border)_1px,transparent_1px),linear-gradient(to_bottom,var(--border)_1px,transparent_1px)] bg-[size:24px_24px] opacity-10"/>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,black_1px,transparent_1px),linear-gradient(to_bottom,black_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] bg-[size:24px_24px] opacity-10"/>
         <div className="bg-background absolute inset-0 m-auto flex size-12 items-center justify-center border-t border-l">{children}</div>
     </div>
 )
