@@ -1,13 +1,10 @@
 
 import { cn } from "@/lib/utils"
-import { Avatar, AvatarImage } from "@/components/ui/avatar"
-import Image from "next/image"
 
 export interface TestimonialAuthor {
   name: string
   handle: string
-  avatar: string
-  dataAiHint?: string
+  icon: React.ReactNode
 }
 
 export interface TestimonialCardProps {
@@ -42,17 +39,9 @@ export function TestimonialCard({
     >
       <div className="flex flex-col flex-grow">
         <div className="flex items-center gap-3">
-          <Avatar className="h-12 w-12">
-             <Image 
-              src={author.avatar} 
-              alt={author.name} 
-              width={48} 
-              height={48} 
-              className="aspect-square h-full w-full"
-              data-ai-hint={author.dataAiHint}
-              priority
-            />
-          </Avatar>
+          <div className="h-12 w-12 rounded-full border bg-background flex items-center justify-center">
+            {author.icon}
+          </div>
           <div className="flex flex-col items-start">
             <h3 className="text-md font-semibold leading-none">
               {author.name}
