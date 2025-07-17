@@ -3,6 +3,7 @@
 import { Briefcase, MessageSquare, Scale, Users, Zap, CheckCircle } from 'lucide-react'
 import { TextRevealByWord } from '@/components/ui/text-reveal';
 import { motion } from 'framer-motion';
+import { CardStack } from '../ui/card-stack';
 
 const features = [
   {
@@ -37,44 +38,39 @@ const features = [
   },
 ];
 
+const cardStackItems = [
+    {
+        id: 0,
+        name: "360° Service Portfolio",
+        designation: "One-Stop Solution",
+        content: <p>From design to deployment, we offer a complete suite of services under one roof, ensuring seamless integration and consistent quality across your entire project.</p>
+    },
+    {
+        id: 1,
+        name: "Scalable Solutions",
+        designation: "Future-Proof Growth",
+        content: <p>We build for your future, ensuring our solutions are robust, flexible, and ready to grow with your business, adapting to new challenges and opportunities.</p>
+    },
+    {
+        id: 2,
+        name: "Agile + Creative Team",
+        designation: "Innovative & Fast",
+        content: <p>Our dynamic team blends agile methodologies with creative thinking for rapid, innovative results that keep you ahead of the curve.</p>
+    }
+]
+
 
 export default function WhyUs() {
-
-    const iconVariants = {
-        hidden: { opacity: 0, scale: 0.8, rotate: -10 },
-        visible: { 
-          opacity: 1, 
-          scale: 1, 
-          rotate: 0,
-          transition: { duration: 0.4, ease: "easeOut" }
-        },
-      };
-
     return (
-        <section id="why-us" className="py-8 md:py-10">
+        <section id="why-us" className="py-8 md:py-16">
             <div className="container mx-auto max-w-5xl space-y-16 px-6">
                 <div className="text-center mb-12">
                     <TextRevealByWord text="Why Choose PixelKliQ" />
                     <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">We are more than just a service provider; we are your digital growth partner.</p>
                 </div>
-                 <div className="relative mx-auto grid max-w-2xl lg:max-w-4xl divide-x divide-y border *:p-12 sm:grid-cols-2 lg:grid-cols-3">
-                    {features.map((feature) => (
-                         <div key={feature.title} className="space-y-3">
-                            <div className="flex items-center gap-2 text-foreground">
-                                <motion.div
-                                    initial="hidden"
-                                    whileInView="visible"
-                                    viewport={{ once: true, amount: 0.5 }}
-                                    variants={iconVariants}
-                                >
-                                    {feature.icon}
-                                </motion.div>
-                                <h3 className="text-sm font-medium">{feature.title}</h3>
-                            </div>
-                            <p className="text-sm text-muted-foreground">{feature.description}</p>
-                        </div>
-                    ))}
-                 </div>
+                <div className="flex items-center justify-center w-full">
+                    <CardStack items={cardStackItems} />
+                </div>
             </div>
         </section>
     )

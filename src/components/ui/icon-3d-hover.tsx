@@ -1,7 +1,7 @@
 
 'use client';
 
-import React, { useState, useRef, useId, useMemo } from 'react';
+import React, { useState, useRef, useId, useMemo, useEffect } from 'react';
 import { motion, MotionConfigContext, LayoutGroup, Variants } from 'framer-motion';
 
 // Types
@@ -56,8 +56,13 @@ export const IconHover3D: React.FC<Props> = ({
   ...restProps
 }) => {
   const [currentVariant, setCurrentVariant] = useState<'Default' | 'Hover'>(variant);
+  const [isMounted, setIsMounted] = useState(false);
   const refBinding = useRef<HTMLDivElement>(null);
   const defaultLayoutId = useId();
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const isHoverVariant = currentVariant === 'Hover';
 
@@ -91,6 +96,10 @@ export const IconHover3D: React.FC<Props> = ({
   };
 
   const animateState = isHoverVariant ? "hover" : "default";
+
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <div style={{ width, height }}>
@@ -292,3 +301,5 @@ export const IconHover3D: React.FC<Props> = ({
     </div>
   );
 };
+
+    

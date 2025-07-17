@@ -1,7 +1,7 @@
 
 "use client";
 
-import { FC, ReactNode, useRef } from "react";
+import { FC, ReactNode, useRef, useEffect, useState } from "react";
 import { motion, MotionValue, useScroll, useTransform } from "framer-motion";
 
 import { cn } from "@/lib/utils";
@@ -22,6 +22,30 @@ const TextRevealByWord: FC<TextRevealByWordProps> = ({
     offset: ["start end", "end start"],
   });
   const words = text.split(" ");
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return (
+       <div ref={targetRef} className={cn("relative z-0", className)}>
+         <p
+          className={
+            "flex flex-wrap justify-center p-5 text-3xl font-bold text-black/20 dark:text-white/20 sm:p-8 sm:text-4xl"
+          }
+        >
+        {words.map((word, i) => (
+          <span key={i} className="xl:lg-3 relative mx-1 lg:mx-2.5">
+            <span className={"absolute opacity-10"}>{word}</span>
+            <span className={"text-transparent"}>{word}</span>
+          </span>
+        ))}
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div ref={targetRef} className={cn("relative z-0", className)}>
