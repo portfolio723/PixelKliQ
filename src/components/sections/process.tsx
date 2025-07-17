@@ -40,7 +40,7 @@ const processCards = [
 
 export default function Process() {
     return (
-        <section id="process" className="pt-8 sm:pt-12 pb-16 sm:pb-24">
+        <section id="process" className="pt-8 sm:pt-12 pb-24 sm:pb-24">
             <div className="container mx-auto px-4">
                 <div className="text-center">
                     <TextRevealByWord text="Our Process" />
