@@ -38,7 +38,9 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-[100dvh] bg-background text-foreground overflow-x-hidden">
       <Header />
-      <Hero />
+      <MotionSection>
+        <Hero />
+      </MotionSection>
       <main className="flex-1">
         <MotionSection>
           <About />
