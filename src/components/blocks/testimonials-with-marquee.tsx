@@ -23,7 +23,7 @@ export function TestimonialsSection({
   return (
     <section id="testimonials" className={cn(
       "bg-background text-foreground",
-      "py-8 sm:py-12 md:py-16 px-0",
+      "py-8 sm:py-12 px-0",
       className
     )}>
       <div className="mx-auto flex max-w-container flex-col items-center text-center">
@@ -35,15 +35,21 @@ export function TestimonialsSection({
         </div>
 
         <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-          <div className="group flex overflow-hidden p-2 [--gap:1rem] [gap:var(--gap)] flex-row [--duration:40s]">
-            <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]">
-              {[...Array(4)].map((_, setIndex) => (
-                testimonials.map((testimonial, i) => (
-                  <TestimonialCard
-                     key={`${setIndex}-${i}`}
-                    {...testimonial}
-                  />
-                ))
+          <div className="group flex w-full overflow-hidden p-2 [--gap:1rem] [gap:var(--gap)] flex-row [--duration:40s]">
+            <div className="flex w-max shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]">
+              {testimonials.map((testimonial, i) => (
+                <TestimonialCard
+                    key={`testimonial-${i}`}
+                  {...testimonial}
+                />
+              ))}
+            </div>
+             <div className="flex w-max shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]" aria-hidden="true">
+              {testimonials.map((testimonial, i) => (
+                <TestimonialCard
+                  key={`testimonial-clone-${i}`}
+                  {...testimonial}
+                />
               ))}
             </div>
           </div>

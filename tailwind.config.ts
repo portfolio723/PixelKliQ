@@ -107,8 +107,8 @@ export default {
           "100%": { opacity: "1", transform: "scale(1)" }
         },
         marquee: {
-          from: { transform: 'translateX(0)' },
-          to: { transform: 'translateX(calc(-100% - var(--gap)))' }
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-100%)' }
         },
         "border-beam": {
           "100%": {
