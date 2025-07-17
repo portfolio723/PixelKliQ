@@ -5,7 +5,7 @@ import type { ComponentProps, ReactNode } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
-import { Mail, Phone, Youtube, Facebook, Instagram, Linkedin } from 'lucide-react';
+import { Mail, Phone, Youtube, Facebook, Instagram, Linkedin, Heart } from 'lucide-react';
 
 interface FooterLink {
 	title: string;
@@ -121,7 +121,9 @@ export default function Footer() {
 				</div>
 			</div>
             <div className="w-full text-center mt-12">
-                <p className="text-sm text-muted-foreground">Dev by Sandesigns</p>
+                <p className="text-sm text-muted-foreground flex items-center justify-center gap-1.5">
+                    Made with <Heart className="size-4 text-red-500 fill-current" /> by PixelKliQ Creatives
+                </p>
             </div>
 		</footer>
 	);
