@@ -2,7 +2,7 @@ import { Layers, TrendingUp, Sparkles, Users, Handshake, Target } from 'lucide-r
 
 export function Features4() {
     return (
-        <section className="py-12 md:py-20">
+        <section className="pb-12 md:pb-20">
             <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
                 <div className="relative mx-auto grid max-w-2xl lg:max-w-4xl divide-x divide-y border *:p-12 sm:grid-cols-2 lg:grid-cols-3">
                     <div className="space-y-3">
