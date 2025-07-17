@@ -10,6 +10,7 @@ import Faq from '@/components/sections/faq';
 import Footer from '@/components/shared/footer';
 import { motion } from 'framer-motion';
 import Header from '@/components/shared/header';
+import WhyUs from '@/components/sections/why-us';
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -40,6 +41,9 @@ export default function Home() {
       <main className="flex-1">
         <MotionSection>
           <About />
+        </MotionSection>
+        <MotionSection>
+          <WhyUs />
         </MotionSection>
         <MotionSection>
           <FeaturesSectionWithHoverEffects />

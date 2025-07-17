@@ -1,80 +1,44 @@
+
 'use client';
-import { Briefcase, MessageSquare, Scale, Users, Zap, CheckCircle } from 'lucide-react'
 import { TextRevealByWord } from '@/components/ui/text-reveal';
-import { motion } from 'framer-motion';
-
-const features = [
-  {
-    icon: <Briefcase className="w-4 h-4" />,
-    title: "360° Service Portfolio",
-    description: "From design to deployment, we offer a complete suite of services under one roof.",
-  },
-  {
-    icon: <Scale className="w-4 h-4" />,
-    title: "Scalable Solutions",
-    description: "We build for your future, ensuring our solutions grow with your business.",
-  },
-  {
-    icon: <Zap className="w-4 h-4" />,
-    title: "Agile + Creative Team",
-    description: "Our dynamic team blends agile methodologies with creative thinking for rapid, innovative results.",
-  },
-  {
-    icon: <Users className="w-4 h-4" />,
-    title: "In-House Experts",
-    description: "Every project is handled by our dedicated team of in-house specialists.",
-  },
-  {
-    icon: <MessageSquare className="w-4 h-4" />,
-    title: "Real-Time Collaboration",
-    description: "We work with you, keeping you in the loop at every stage of the project.",
-  },
-  {
-    icon: <CheckCircle className="w-4 h-4" />,
-    title: "Proven Results",
-    description: "Our track record speaks for itself. Check out what our clients have to say.",
-  },
-];
-
+import { Target, Eye } from 'lucide-react';
 
 export default function About() {
-
-    const iconVariants = {
-        hidden: { opacity: 0, scale: 0.8, rotate: -10 },
-        visible: { 
-          opacity: 1, 
-          scale: 1, 
-          rotate: 0,
-          transition: { duration: 0.4, ease: "easeOut" }
-        },
-      };
-
-    return (
-        <section id="about" className="py-16 md:py-20">
-            <div className="container mx-auto max-w-5xl space-y-16 px-6">
-                <div className="text-center mb-12">
-                    <TextRevealByWord text="Why Choose PixelKliQ" />
-                    <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">We are more than just a service provider; we are your digital growth partner.</p>
+  return (
+    <section id="about" className="py-16 md:py-20">
+      <div className="container mx-auto max-w-5xl space-y-12 px-6">
+        <div className="text-center">
+          <TextRevealByWord text="Who We Are" />
+          <p className="text-muted-foreground mt-4 text-lg max-w-3xl mx-auto">
+            Empowering businesses with creative thinking, scalable tech, and strategic execution.
+          </p>
+        </div>
+        <div className="text-center max-w-4xl mx-auto">
+            <p className="text-md md:text-lg text-foreground/80">
+                PixelKLiQ is a multidisciplinary digital partner built to scale ideas into powerful outcomes. Based in India, we work with startups, enterprises, and institutions across the globe to design, develop, and deliver meaningful solutions that drive business transformation.
+            </p>
+        </div>
+        <div className="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+            <div className="text-center p-6 border rounded-lg">
+                <div className="inline-flex items-center justify-center bg-primary text-primary-foreground rounded-full p-3 mb-4">
+                    <Target className="w-6 h-6" />
                 </div>
-                 <div className="relative mx-auto grid max-w-2xl lg:max-w-4xl divide-x divide-y border *:p-12 sm:grid-cols-2 lg:grid-cols-3">
-                    {features.map((feature) => (
-                         <div key={feature.title} className="space-y-3">
-                            <div className="flex items-center gap-2 text-foreground">
-                                <motion.div
-                                    initial="hidden"
-                                    whileInView="visible"
-                                    viewport={{ once: true, amount: 0.5 }}
-                                    variants={iconVariants}
-                                >
-                                    {feature.icon}
-                                </motion.div>
-                                <h3 className="text-sm font-medium">{feature.title}</h3>
-                            </div>
-                            <p className="text-sm text-muted-foreground">{feature.description}</p>
-                        </div>
-                    ))}
-                 </div>
+                <h3 className="text-xl font-semibold mb-2">Our Mission</h3>
+                <p className="text-muted-foreground">
+                    To build a world where creativity, talent, and technology combine to create real-world impact.
+                </p>
             </div>
-        </section>
-    )
+            <div className="text-center p-6 border rounded-lg">
+                <div className="inline-flex items-center justify-center bg-primary text-primary-foreground rounded-full p-3 mb-4">
+                     <Eye className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Our Vision</h3>
+                <p className="text-muted-foreground">
+                    To be the most trusted partner for end-to-end digital growth in the modern era.
+                </p>
+            </div>
+        </div>
+      </div>
+    </section>
+  );
 }
