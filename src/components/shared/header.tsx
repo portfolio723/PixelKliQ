@@ -9,7 +9,6 @@ import Image from 'next/image';
 
 const menuItems = [
   { href: '#home', label: 'Home' },
-  { href: '#about', label: 'About' },
   { href: '#services', label: 'Services' },
   { href: '#industries', label: 'Industries' },
   { href: '#testimonials', label: 'Testimonials' },

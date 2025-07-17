@@ -22,7 +22,6 @@ const footerLinks: FooterSection[] = [
 		label: 'Navigate',
 		links: [
 			{ title: 'Home', href: '#home' },
-			{ title: 'About', href: '#about' },
 			{ title: 'Services', href: '#services' },
 		],
 	},

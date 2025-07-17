@@ -1,6 +1,5 @@
 
 'use client';
-import About from '@/components/sections/about';
 import Contact from '@/components/sections/contact';
 import { FeaturesSectionWithHoverEffects } from '@/components/blocks/feature-section-with-hover-effects';
 import Hero from '@/components/sections/hero';
@@ -39,9 +38,6 @@ export default function Home() {
       <Header />
       <Hero />
       <main className="flex-1">
-        <MotionSection>
-          <About />
-        </MotionSection>
         <MotionSection>
           <WhyUs />
         </MotionSection>
