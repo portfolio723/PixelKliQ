@@ -3,6 +3,7 @@
 
 import { TextRevealByWord } from "../ui/text-reveal";
 import { GridPatternCard, GridPatternCardBody } from "@/components/ui/card-with-grid-pattern";
+import { Features } from "../blocks/features-1";
 
 const About = () => {
     return (
@@ -42,6 +43,7 @@ const About = () => {
                         </GridPatternCardBody>
                     </GridPatternCard>
                 </div>
+                <Features />
             </div>
         </section>
     );
