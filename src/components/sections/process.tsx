@@ -42,7 +42,7 @@ export default function Process() {
     return (
         <section id="process" className="py-8 sm:py-12">
             <div className="container mx-auto px-4">
-                <div className="text-center mb-12">
+                <div className="text-center">
                     <TextRevealByWord text="Our Process" />
                     <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
                         Simple, Strategic, Seamless
