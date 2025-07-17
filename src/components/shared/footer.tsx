@@ -5,6 +5,7 @@ import type { ComponentProps, ReactNode } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
+import { Mail, Phone } from 'lucide-react';
 
 interface FooterLink {
 	title: string;
@@ -32,7 +33,7 @@ const footerLinks: FooterSection[] = [
 		label: 'Company',
 		links: [
 			{ title: 'Mail', href: 'mailto:info@pixelkliq.com' },
-            { title: 'Phone', href: 'tel:+910000000000' },
+            { title: 'Phone', href: 'tel:+919032847675' },
 		],
 	},
     {
@@ -77,7 +78,21 @@ export default function Footer() {
 					<div className="flex items-center gap-2">
                         <Logo />
                     </div>
-					<p className="text-muted-foreground mt-8 text-sm md:mt-0">
+                    <div className="mt-4 space-y-2 text-sm text-muted-foreground">
+                        <a href="mailto:careers@pixelkliq.com" className="flex items-center gap-2 hover:text-foreground transition-colors">
+                            <Mail className="size-4" />
+                            <span>Careers@pixelkliq.com</span>
+                        </a>
+                        <a href="mailto:info@pixelkliq.com" className="flex items-center gap-2 hover:text-foreground transition-colors">
+                            <Mail className="size-4" />
+                            <span>info@pixelkliq.com</span>
+                        </a>
+                        <a href="tel:+919032847675" className="flex items-center gap-2 hover:text-foreground transition-colors">
+                            <Phone className="size-4" />
+                            <span>+91 90328 47675</span>
+                        </a>
+                    </div>
+					<p className="text-muted-foreground mt-8 text-sm md:mt-0 pt-4">
 						© {new Date().getFullYear()} PixelKliQ. All rights reserved.
 					</p>
 				</AnimatedContainer>
