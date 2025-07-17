@@ -22,16 +22,17 @@ const footerLinks: FooterSection[] = [
 		label: 'Navigate',
 		links: [
 			{ title: 'Home', href: '#home' },
-			{ title: 'About', href: '#about' },
 			{ title: 'Services', href: '#services' },
-			{ title: 'FAQ', href: '#faq' },
 			{ title: 'Testimonials', href: '#testimonials' },
+			{ title: 'FAQ', href: '#faq' },
 		],
 	},
 	{
 		label: 'Company',
 		links: [
-			{ title: 'Contact', href: '#contact' },
+            { title: 'About', href: '#about' },
+			{ title: 'Mail', href: 'mailto:info@pixelkliq.com' },
+            { title: 'Phone', href: 'tel:+910000000000' },
 		],
 	},
 	{
