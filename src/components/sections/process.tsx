@@ -40,7 +40,7 @@ const processCards = [
 
 export default function Process() {
     return (
-        <section id="process" className="py-8 sm:py-12">
+        <section id="process" className="pt-8 sm:pt-12 pb-16 sm:pb-24">
             <div className="container mx-auto px-4">
                 <div className="text-center">
                     <TextRevealByWord text="Our Process" />
@@ -48,7 +48,7 @@ export default function Process() {
                         Simple, Strategic, Seamless
                     </p>
                 </div>
-                <div className="flex w-full items-center justify-center pt-12">
+                <div className="flex w-full items-center justify-center pt-8">
                     <div className="w-full max-w-3xl">
                         <DisplayCards cards={processCards} />
                     </div>
