@@ -29,13 +29,6 @@ const footerLinks: FooterSection[] = [
 			{ title: 'FAQ', href: '#faq' },
 		],
 	},
-	{
-		label: 'Company',
-		links: [
-			{ title: 'Mail', href: 'mailto:info@pixelkliq.com' },
-            { title: 'Phone', href: 'tel:+919032847675' },
-		],
-	},
     {
         label: 'Social',
         links: [
@@ -76,7 +69,7 @@ export default function Footer() {
 			<div className="grid w-full gap-8 xl:grid-cols-3 xl:gap-8">
 				<AnimatedContainer className="space-y-4">
 					<div className="flex items-center gap-2">
-                        <Logo />
+                        <Logo className="w-auto"/>
                     </div>
                     <div className="mt-4 space-y-2 text-sm text-muted-foreground">
                         <a href="mailto:careers@pixelkliq.com" className="flex items-center gap-2 hover:text-foreground transition-colors">
