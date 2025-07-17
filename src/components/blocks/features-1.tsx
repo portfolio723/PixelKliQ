@@ -8,7 +8,7 @@ export function Features() {
         <section className="bg-transparent py-16 md:py-24">
             <div className="mx-auto max-w-5xl px-6">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <Card className="group shadow-black-950/5 text-center">
+                    <Card className="group shadow-black-950/5 text-center rounded-none">
                         <CardHeader className="pb-3">
                             <CardDecorator>
                                 <Zap className="size-6" aria-hidden />
@@ -22,7 +22,7 @@ export function Features() {
                         </CardContent>
                     </Card>
 
-                    <Card className="group shadow-black-950/5 text-center">
+                    <Card className="group shadow-black-950/5 text-center rounded-none">
                         <CardHeader className="pb-3">
                             <CardDecorator>
                                 <Settings2 className="size-6" aria-hidden />
@@ -36,7 +36,7 @@ export function Features() {
                         </CardContent>
                     </Card>
 
-                    <Card className="group shadow-black-950/5 text-center">
+                    <Card className="group shadow-black-950/5 text-center rounded-none">
                         <CardHeader className="pb-3">
                             <CardDecorator>
                                 <Sparkles className="size-6" aria-hidden />
