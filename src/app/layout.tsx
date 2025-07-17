@@ -10,20 +10,15 @@ import { SmoothCursor } from '@/components/magicui/smooth-cursor';
 
 const fontBody = Inter({
   subsets: ['latin'],
+  display: 'swap',
   variable: '--font-body',
 });
 
 const fontCode = Source_Code_Pro({
   subsets: ['latin'],
+  display: 'swap',
   variable: '--font-code',
 });
-
-// Note: Metadata is not supported in client components.
-// We can move this to a server component if needed, but for now we'll keep it simple.
-// export const metadata: Metadata = {
-//   title: 'PixelKliQ HQ - Modern Digital Solutions',
-//   description: 'PixelKliQ offers cutting-edge digital solutions in Hyderabad, from creative design to tech development. Partner with us to elevate your brand.',
-// };
 
 export default function RootLayout({
   children,
