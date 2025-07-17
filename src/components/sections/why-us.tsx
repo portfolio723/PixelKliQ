@@ -7,8 +7,8 @@ import { Features4 } from '../blocks/features-4';
 export default function WhyUs() {
     return (
         <section id="why-us" className="py-8 md:py-16">
-            <div className="container mx-auto max-w-5xl space-y-16 px-6">
-                <div className="text-center mb-12">
+            <div className="container mx-auto max-w-5xl space-y-8 px-6">
+                <div className="text-center">
                     <TextRevealByWord text="Why Choose PixelKliQ" />
                     <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">We are more than just a service provider; we are your digital growth partner.</p>
                 </div>
