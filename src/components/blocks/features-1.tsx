@@ -18,7 +18,7 @@ export function Features() {
                         </CardHeader>
 
                         <CardContent>
-                            <p className="text-sm text-muted-foreground">We iterate fast and stay flexible to deliver innovative results quickly.</p>
+                            <p className="text-sm text-muted-foreground">We iterate fast and stay flexible</p>
                         </CardContent>
                     </Card>
 
