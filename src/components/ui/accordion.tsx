@@ -14,20 +14,14 @@ export const Accordions = forwardRef<
   const [value, setValue] = useState<string | string[]>(
     type === 'single' ? (defaultValue ?? '') : (defaultValue ?? [])
   );
-  const [isClient, setIsClient] = useState(false);
-
+  
   useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  useEffect(() => {
-    if (isClient) {
-      const id = window.location.hash.substring(1);
-      if (id.length > 0) {
-        setValue((prev) => (typeof prev === 'string' ? id : [id, ...prev.filter(i => i !== id)]));
-      }
+    // This effect runs only on the client, after the component has mounted.
+    const id = window.location.hash.substring(1);
+    if (id.length > 0) {
+      setValue((prev) => (typeof prev === 'string' ? id : [id, ...prev.filter(i => i !== id)]));
     }
-  }, [isClient]);
+  }, []);
 
   return (
     <AccordionPrimitive.Root

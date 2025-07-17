@@ -6,6 +6,7 @@ import { motion, useSpring } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
 export const SmoothCursor = () => {
+  const [isMounted, setIsMounted] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
 
   const cursorSize = 16;
@@ -22,6 +23,12 @@ export const SmoothCursor = () => {
   };
 
   useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isMounted) return;
+
     window.addEventListener('mousemove', manageMouseMove);
 
     document.body.addEventListener('mouseenter', () => setIsHovering(true));
@@ -32,7 +39,11 @@ export const SmoothCursor = () => {
       document.body.removeEventListener('mouseenter', () => setIsHovering(true));
       document.body.removeEventListener('mouseleave', () => setIsHovering(false));
     };
-  }, [cursorSize]);
+  }, [isMounted]);
+
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <motion.div
