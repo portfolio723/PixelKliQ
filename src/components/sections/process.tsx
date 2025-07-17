@@ -44,11 +44,11 @@ export default function Process() {
             <div className="container mx-auto px-4">
                 <div className="text-center">
                     <TextRevealByWord text="Our Process" />
-                    <p className="max-w-2xl mx-auto text-lg text-muted-foreground">
+                    <p className="max-w-2xl mx-auto text-lg text-muted-foreground mt-2">
                         Simple, Strategic, Seamless
                     </p>
                 </div>
-                <div className="flex w-full items-center justify-center py-10">
+                <div className="flex w-full items-center justify-center pt-12">
                     <div className="w-full max-w-3xl">
                         <DisplayCards cards={processCards} />
                     </div>
