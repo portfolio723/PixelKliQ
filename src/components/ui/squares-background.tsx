@@ -22,24 +22,20 @@ export function Squares({
   className,
 }: SquaresProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const [isClient, setIsClient] = useState(false)
+  const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
-    setIsClient(true)
+    setIsMounted(true)
   }, [])
 
   useEffect(() => {
-    if (!isClient) return
+    if (!isMounted) return
 
     const canvas = canvasRef.current
     if (!canvas) return
 
     const ctx = canvas.getContext("2d")
     if (!ctx) return
-
-    // Set canvas background
-    const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--background').trim()
-    canvas.style.background = `hsl(${bgColor})`
 
     let numSquaresX = Math.ceil(canvas.width / squareSize) + 1
     let numSquaresY = Math.ceil(canvas.height / squareSize) + 1
@@ -57,7 +53,11 @@ export function Squares({
 
     const drawGrid = () => {
       if(!ctx) return
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
+      
+      const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--background').trim()
+      ctx.fillStyle = `hsl(${bgColor})`
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
 
       const startX = Math.floor(gridOffset.x / squareSize) * squareSize
       const startY = Math.floor(gridOffset.y / squareSize) * squareSize
@@ -82,23 +82,6 @@ export function Squares({
           ctx.strokeRect(squareX, squareY, squareSize, squareSize)
         }
       }
-
-      const gradient = ctx.createRadialGradient(
-        canvas.width / 2,
-        canvas.height / 2,
-        0,
-        canvas.width / 2,
-        canvas.height / 2,
-        Math.sqrt(Math.pow(canvas.width, 2) + Math.pow(canvas.height, 2)) / 2,
-      )
-      const currentBgColor = getComputedStyle(document.documentElement).getPropertyValue('--background').trim();
-      const [h, s, l] = currentBgColor.split(' ').map(parseFloat);
-      
-      gradient.addColorStop(0, `hsla(${h}, ${s}%, ${l}%, 0)`)
-      gradient.addColorStop(1, `hsla(${h}, ${s}%, ${l}%, 1)`)
-
-      ctx.fillStyle = gradient
-      ctx.fillRect(0, 0, canvas.width, canvas.height)
     }
 
     let animationFrameId: number;
@@ -151,22 +134,19 @@ export function Squares({
       hoveredSquare = null;
     }
 
-    // Event listeners
     window.addEventListener("resize", resizeCanvas)
     canvas.addEventListener("mousemove", handleMouseMove)
     canvas.addEventListener("mouseleave", handleMouseLeave)
 
-    // Initial setup
     updateAnimation()
 
-    // Cleanup
     return () => {
       window.removeEventListener("resize", resizeCanvas)
       canvas.removeEventListener("mousemove", handleMouseMove)
       canvas.removeEventListener("mouseleave", handleMouseLeave)
       cancelAnimationFrame(animationFrameId)
     }
-  }, [isClient, direction, speed, borderColor, hoverFillColor, squareSize])
+  }, [isMounted, direction, speed, borderColor, hoverFillColor, squareSize])
 
   return (
     <canvas
