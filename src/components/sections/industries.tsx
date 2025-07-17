@@ -1,3 +1,4 @@
+
 'use client';
 import {
   Building2,
@@ -47,7 +48,7 @@ const features = [
 
 export default function Industries() {
   return (
-    <section id="industries" className="py-16 sm:py-24 bg-background">
+    <section id="industries" className="py-8 sm:py-12 bg-background">
       <div className="mx-auto w-full max-w-5xl space-y-16 px-4">
         <AnimatedContainer className="mx-auto max-w-3xl text-center">
           <div className="text-center mb-12">

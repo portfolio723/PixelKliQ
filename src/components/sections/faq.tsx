@@ -37,7 +37,7 @@ const faqItems = [
 
 export default function Faq() {
   return (
-    <section id="faq" className="py-16 sm:py-24">
+    <section id="faq" className="py-8 sm:py-12">
       <div className="container mx-auto max-w-3xl px-6">
         <div className="text-center mb-12">
           <TextRevealByWord text="Frequently Asked Questions" />

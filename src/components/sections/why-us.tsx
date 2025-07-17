@@ -51,7 +51,7 @@ export default function WhyUs() {
       };
 
     return (
-        <section id="why-us" className="py-16 md:py-20">
+        <section id="why-us" className="py-8 md:py-10">
             <div className="container mx-auto max-w-5xl space-y-16 px-6">
                 <div className="text-center mb-12">
                     <TextRevealByWord text="Why Choose PixelKliQ" />

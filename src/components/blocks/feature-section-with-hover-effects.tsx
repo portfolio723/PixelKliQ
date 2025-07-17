@@ -48,7 +48,7 @@ export function FeaturesSectionWithHoverEffects() {
     },
   ];
   return (
-    <section id="services" className="relative py-16 sm:py-24 overflow-hidden">
+    <section id="services" className="relative py-8 sm:py-12 overflow-hidden">
        <div className="container mx-auto px-4">
         <div className="text-center mb-12">
             <TextRevealByWord text="Our Services" />
