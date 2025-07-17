@@ -76,7 +76,7 @@ export default function Hero() {
                                         <Button
                                             asChild
                                             size="lg"
-                                            className="rounded-xl px-5 text-base border border-border hover:bg-transparent transition-all duration-300">
+                                            className="rounded-xl px-5 text-base border border-border bg-background hover:bg-accent hover:text-accent-foreground transition-all duration-300">
                                             <Link href="#services">
                                                 <span className="text-nowrap">Explore Services</span>
                                             </Link>

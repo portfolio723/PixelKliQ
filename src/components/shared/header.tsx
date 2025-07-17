@@ -96,6 +96,7 @@ export default function Header() {
                                 <Button
                                     asChild
                                     size="sm"
+                                    variant="outline"
                                     className={cn('lg:inline-flex')}>
                                     <Link href="#contact" onClick={() => setMenuState(false)}>
                                         <span>Contact Us</span>
