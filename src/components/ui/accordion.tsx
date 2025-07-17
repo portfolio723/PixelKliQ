@@ -24,7 +24,7 @@ export const Accordions = forwardRef<
     if (isClient) {
       const id = window.location.hash.substring(1);
       if (id.length > 0) {
-        setValue((prev) => (typeof prev === 'string' ? id : [id, ...prev]));
+        setValue((prev) => (typeof prev === 'string' ? id : [id, ...prev.filter(i => i !== id)]));
       }
     }
   }, [isClient]);
