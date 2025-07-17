@@ -13,6 +13,7 @@ export interface TestimonialAuthor {
 export interface TestimonialCardProps {
   author: TestimonialAuthor
   text: string
+  services?: string
   href?: string
   className?: string
 }
@@ -20,6 +21,7 @@ export interface TestimonialCardProps {
 export function TestimonialCard({
    author,
   text,
+  services,
   href,
   className
 }: TestimonialCardProps) {
@@ -29,7 +31,7 @@ export function TestimonialCard({
     <Card
       {...(href ? { href, target: "_blank", rel: "noopener noreferrer" } : {})}
       className={cn(
-        "flex flex-col rounded-lg border-t",
+        "flex flex-col rounded-lg border-t h-full",
         "bg-gradient-to-b from-muted/50 to-muted/10",
         "p-4 text-start sm:p-6",
         "hover:from-muted/60 hover:to-muted/20",
@@ -38,30 +40,38 @@ export function TestimonialCard({
         className
       )}
     >
-      <div className="flex items-center gap-3">
-        <Avatar className="h-12 w-12">
-           <Image 
-            src={author.avatar} 
-            alt={author.name} 
-            width={48} 
-            height={48} 
-            className="aspect-square h-full w-full"
-            data-ai-hint={author.dataAiHint}
-            priority
-          />
-        </Avatar>
-        <div className="flex flex-col items-start">
-          <h3 className="text-md font-semibold leading-none">
-            {author.name}
-          </h3>
-          <p className="text-sm text-muted-foreground">
-            {author.handle}
-          </p>
+      <div className="flex flex-col flex-grow">
+        <div className="flex items-center gap-3">
+          <Avatar className="h-12 w-12">
+             <Image 
+              src={author.avatar} 
+              alt={author.name} 
+              width={48} 
+              height={48} 
+              className="aspect-square h-full w-full"
+              data-ai-hint={author.dataAiHint}
+              priority
+            />
+          </Avatar>
+          <div className="flex flex-col items-start">
+            <h3 className="text-md font-semibold leading-none">
+              {author.name}
+            </h3>
+            <p className="text-sm text-muted-foreground">
+              {author.handle}
+            </p>
+          </div>
         </div>
+        <p className="sm:text-md mt-4 text-sm text-muted-foreground flex-grow">
+          {text}
+        </p>
       </div>
-      <p className="sm:text-md mt-4 text-sm text-muted-foreground">
-        {text}
-      </p>
+      {services && (
+        <div className="mt-4 pt-4 border-t border-border/50">
+          <p className="text-xs font-semibold text-foreground/80">Services Provided:</p>
+          <p className="text-xs text-muted-foreground">{services}</p>
+        </div>
+      )}
     </Card>
   )
 }

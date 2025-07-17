@@ -9,6 +9,7 @@ interface TestimonialsSectionProps {
   testimonials: Array<{
     author: TestimonialAuthor
     text: string
+    services?: string
     href?: string
   }>
   className?: string
@@ -35,7 +36,7 @@ export function TestimonialsSection({
         </div>
 
         <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-          <div className="group flex w-full overflow-hidden p-2 [--gap:1rem] [gap:var(--gap)] flex-row [--duration:40s]">
+          <div className="group flex w-full overflow-hidden p-2 [--gap:1rem] [gap:var(--gap)] flex-row [--duration:60s]">
             <div className="flex w-max shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]">
               {testimonials.map((testimonial, i) => (
                 <TestimonialCard
