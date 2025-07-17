@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { Settings2, Sparkles, Zap } from 'lucide-react'
 import { ReactNode } from 'react'
@@ -5,13 +6,9 @@ import { ReactNode } from 'react'
 export function Features() {
     return (
         <section className="bg-transparent py-16 md:py-24">
-            <div className="@container mx-auto max-w-5xl px-6">
-                <div className="text-center">
-                    <h2 className="text-balance text-4xl font-semibold lg:text-5xl">Built to cover your needs</h2>
-                    <p className="mt-4 text-muted-foreground">Libero sapiente aliquam quibusdam aspernatur, praesentium iusto repellendus.</p>
-                </div>
-                <div className="@min-4xl:max-w-full @min-4xl:grid-cols-3 mx-auto mt-8 grid max-w-sm gap-6 *:text-center md:mt-16">
-                    <Card className="group shadow-black-950/5">
+            <div className="mx-auto max-w-5xl px-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <Card className="group shadow-black-950/5 text-center">
                         <CardHeader className="pb-3">
                             <CardDecorator>
                                 <Zap className="size-6" aria-hidden />
@@ -25,7 +22,7 @@ export function Features() {
                         </CardContent>
                     </Card>
 
-                    <Card className="group shadow-black-950/5">
+                    <Card className="group shadow-black-950/5 text-center">
                         <CardHeader className="pb-3">
                             <CardDecorator>
                                 <Settings2 className="size-6" aria-hidden />
@@ -39,7 +36,7 @@ export function Features() {
                         </CardContent>
                     </Card>
 
-                    <Card className="group shadow-black-950/5">
+                    <Card className="group shadow-black-950/5 text-center">
                         <CardHeader className="pb-3">
                             <CardDecorator>
                                 <Sparkles className="size-6" aria-hidden />
