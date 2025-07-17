@@ -40,6 +40,18 @@ const About = () => {
                         </GridPatternCardBody>
                     </GridPatternCard>
                 </div>
+                <div className="mt-8 max-w-4xl mx-auto">
+                    <GridPatternCard>
+                        <GridPatternCardBody>
+                            <h3 className="font-medium mb-1 text-foreground">
+                                About Team
+                            </h3>
+                            <p className="text-wrap text-sm text-foreground/60">
+                                At PixelKliQ, our team is more than a group of experts—we're a digital powerhouse united by curiosity, creativity, and a shared drive to solve problems through design and technology. Each member brings a unique blend of experience across UI/UX, branding, development, content, and innovation strategy—collaborating to build experiences that matter.
+                            </p>
+                        </GridPatternCardBody>
+                    </GridPatternCard>
+                </div>
                 <Features />
             </div>
         </section>
