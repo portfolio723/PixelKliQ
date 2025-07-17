@@ -62,7 +62,7 @@ export default function DisplayCards({ cards }: DisplayCardsProps) {
     },
     {
         title: "Mission",
-        description: "To build a world where creativity, talent, and technology combine to create real-world impact.",
+        description: "Building a world where creativity and tech create real-world impact.",
         date: "Agile",
         className: "[grid-area:stack] translate-x-32 translate-y-20 hover:translate-y-10",
     },
