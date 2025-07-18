@@ -97,8 +97,7 @@ export default function Header() {
                                 <Button
                                     asChild
                                     size="sm"
-                                    variant="outline"
-                                    className={cn('lg:inline-flex')}>
+                                    className={cn('lg:inline-flex bg-white/80 text-black hover:bg-white transition-colors duration-300')}>
                                     <Link href="#contact" onClick={() => setMenuState(false)}>
                                         <span>Contact Us</span>
                                     </Link>
