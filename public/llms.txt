@@ -1,0 +1,3 @@
+user-agent: *
+sitemap: /sitemap.xml
+summary: PixelKliQ is a modern digital solutions agency offering a comprehensive suite of services including creative design, technology solutions (SaaS, ERP, API integration), educational programs, HR services, and tele-services. Our mission is to transform ideas into impactful digital experiences by empowering businesses with creative thinking, scalable technology, and strategic execution.
