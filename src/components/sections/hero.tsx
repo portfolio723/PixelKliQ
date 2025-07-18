@@ -74,7 +74,7 @@ export default function Hero() {
                                         key={1}
                                         asChild
                                         size="lg"
-                                        className="rounded-xl px-5 text-base bg-white text-black hover:bg-white/90 transition-all duration-300">
+                                        className="rounded-xl px-5 text-base bg-white/80 text-black hover:bg-white/90 transition-all duration-300">
                                         <Link href="#services">
                                             <span className="text-nowrap">Explore Services</span>
                                         </Link>
@@ -84,7 +84,7 @@ export default function Hero() {
                                         asChild
                                         size="lg"
                                         variant="outline"
-                                        className="rounded-xl px-5 bg-transparent border-white/50 hover:bg-white/10 hover:text-white">
+                                        className="rounded-xl px-5 bg-transparent border-white/50 hover:bg-white/10 hover:text-white text-base">
                                         <Link href="#contact">
                                             <span className="text-nowrap">Book a Free Consultation</span>
                                         </Link>
