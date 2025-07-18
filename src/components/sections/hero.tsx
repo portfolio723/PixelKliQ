@@ -74,7 +74,7 @@ export default function Hero() {
                                         key={1}
                                         asChild
                                         size="lg"
-                                        className="rounded-xl px-5 text-base bg-white/80 text-black hover:bg-white/90 transition-all duration-300">
+                                        className="rounded-xl px-5 text-base bg-white/80 text-black hover:bg-white transition-all duration-300">
                                         <Link href="#services">
                                             <span className="text-nowrap">Explore Services</span>
                                         </Link>
