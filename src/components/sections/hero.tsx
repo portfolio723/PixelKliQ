@@ -70,18 +70,15 @@ export default function Hero() {
                                         ...transitionVariants,
                                     }}
                                     className="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row">
-                                    <div
+                                    <Button
                                         key={1}
-                                        className="rounded-[14px] p-0.5 transition-all duration-300 bg-transparent hover:bg-foreground/10">
-                                        <Button
-                                            asChild
-                                            size="lg"
-                                            className="rounded-xl px-5 text-base border border-border bg-background hover:bg-accent hover:text-accent-foreground transition-all duration-300">
-                                            <Link href="#services">
-                                                <span className="text-nowrap">Explore Services</span>
-                                            </Link>
-                                        </Button>
-                                    </div>
+                                        asChild
+                                        size="lg"
+                                        className="rounded-xl px-5 text-base bg-white text-black hover:bg-white/90 transition-all duration-300">
+                                        <Link href="#services">
+                                            <span className="text-nowrap">Explore Services</span>
+                                        </Link>
+                                    </Button>
                                     <Button
                                         key={2}
                                         asChild
