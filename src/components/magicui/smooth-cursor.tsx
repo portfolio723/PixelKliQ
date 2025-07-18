@@ -53,7 +53,7 @@ export const SmoothCursor = () => {
         opacity: isHovering ? 1 : 0,
       }}
       className={cn(
-        "pointer-events-none fixed z-[999] h-4 w-4 rounded-full bg-primary",
+        "pointer-events-none fixed z-[999] h-4 w-4 rounded-full bg-white/80",
         "hidden md:block" // Hide on mobile devices
       )}
     />
