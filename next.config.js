@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
+  output: 'export',  // Essential for GitHub Pages
+  basePath: '/PixelKliQ',  // Your repository name
+  assetPrefix: '/PixelKliQ',  // Ensures assets load correctly
+  trailingSlash: true,
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -8,6 +11,7 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
+    unoptimized: true,  // Required for static export
     remotePatterns: [
       {
         protocol: 'https',
