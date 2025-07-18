@@ -19,32 +19,32 @@ export function FeaturesSectionWithHoverEffects() {
       description:
         "Logo Design, Website Dev, UI/UX, Social Media Creatives, SEO.",
       icon: <IconPalette />,
-      link: "#",
+      link: "#services",
     },
     {
       title: "PixelKLiQ Solutions",
       description:
         "SaaS, ERP, CRM, API Integration, DevOps.",
       icon: <IconServerCog />,
-      link: "#",
+      link: "#services",
     },
     {
       title: "PixelKLiQ Edutech",
       description:"Internships, Courses, Workshops.",
       icon: <IconSchool />,
-      link: "#",
+      link: "#services",
     },
     {
       title: "PixelKLiQ HR Services",
       description: "Recruitment, Payroll, Virtual HR.",
       icon: <IconUsers />,
-      link: "#",
+      link: "#services",
     },
     {
       title: "PixelKLiQ Tele Services",
       description: "Call Center Setup, CRM, Support, Lead Gen.",
       icon: <IconPhone />,
-      link: "#",
+      link: "#services",
     },
   ];
   return (

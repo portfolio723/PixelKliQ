@@ -9,7 +9,7 @@ import { Mail, Phone, Youtube, Facebook, Instagram, Linkedin, Heart } from 'luci
 
 interface FooterLink {
 	title: string;
-	href: string;
+	href?: string;
 	icon?: React.ComponentType<{ className?: string }>;
 }
 
@@ -41,10 +41,10 @@ const footerLinks: FooterSection[] = [
 	{
 		label: 'Legal',
 		links: [
-			{ title: 'Privacy policy', href: '#' },
-			{ title: 'Terms of use', href: '#' },
-			{ title: 'Refund policy', href: '#' },
-			{ title: 'Compliance', href: '#' },
+			{ title: 'Privacy policy' },
+			{ title: 'Terms of use' },
+			{ title: 'Refund policy' },
+			{ title: 'Compliance' },
 		],
 	},
 ];
@@ -98,13 +98,20 @@ export default function Footer() {
 								<ul className="text-muted-foreground mt-4 space-y-2 text-sm">
 									{section.links.map((link) => (
 										<li key={link.title}>
-											<a
-												href={link.href}
-												className="hover:text-foreground inline-flex items-center transition-all duration-300"
-											>
-												{link.icon && <link.icon className="me-2 size-4" />}
-												{link.title}
-											</a>
+                                            {link.href ? (
+                                                <a
+                                                    href={link.href}
+                                                    className="hover:text-foreground inline-flex items-center transition-all duration-300"
+                                                >
+                                                    {link.icon && <link.icon className="me-2 size-4" />}
+                                                    {link.title}
+                                                </a>
+                                            ) : (
+                                                <span className="inline-flex items-center">
+                                                    {link.icon && <link.icon className="me-2 size-4" />}
+                                                    {link.title}
+                                                </span>
+                                            )}
 										</li>
 									))}
 								</ul>
