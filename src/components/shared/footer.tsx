@@ -115,7 +115,7 @@ export default function Footer() {
 			</div>
             <div className="w-full text-center mt-12">
                 <p className="text-sm text-muted-foreground flex items-center justify-center gap-1.5">
-                    Made with <Heart className="size-4 text-red-500 fill-current" /> by PixelKliQ Creatives
+                    Dev by PixelKliQ Creatives
                 </p>
             </div>
 		</footer>
