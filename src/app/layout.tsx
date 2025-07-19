@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <title>PixelKliQ HQ - Modern Digital Solutions</title>
+        <title>PixelKliQ</title>
         <meta name="description" content="PixelKliQ offers cutting-edge digital solutions in Hyderabad, from creative design to tech development. Partner with us to elevate your brand." />
       </head>
       <body className={cn("font-body antialiased", fontBody.variable, fontCode.variable)}>

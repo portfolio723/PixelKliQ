@@ -18,8 +18,6 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
 import { Badge } from '@/components/ui/badge';
-import { addDoc, collection } from 'firebase/firestore';
-import { db } from '@/lib/firebase';
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -46,19 +44,38 @@ export default function Contact() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
+    const json = JSON.stringify({
+        apikey: "7ff0fceb-51c1-4897-a782-84f8cebcd76f",
+        ...values
+    });
+
     try {
-      const docRef = await addDoc(collection(db, "contacts"), {
-        ...values,
-        submittedAt: new Date(),
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: json,
       });
-      console.log("Document written with ID: ", docRef.id);
-      toast({
-        title: "Message Sent!",
-        description: "Thanks for reaching out. We'll get back to you shortly.",
-      });
-      form.reset();
+
+      const result = await response.json();
+      if (result.success) {
+        toast({
+          title: "Message Sent!",
+          description: "Thanks for reaching out. We'll get back to you shortly.",
+        });
+        form.reset();
+      } else {
+        console.error("Error submitting form:", result);
+        toast({
+          title: "Uh oh! Something went wrong.",
+          description: result.message || "There was a problem sending your message.",
+          variant: "destructive",
+        });
+      }
     } catch (e) {
-      console.error("Error adding document: ", e);
+      console.error("Error submitting form: ", e);
       toast({
         title: "Uh oh! Something went wrong.",
         description: "There was a problem sending your message. Please try again.",

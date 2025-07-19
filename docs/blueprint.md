@@ -1,4 +1,4 @@
-# **App Name**: PixelKliQ HQ
+# **App Name**: PixelKliQ
 
 ## Core Features:
 
