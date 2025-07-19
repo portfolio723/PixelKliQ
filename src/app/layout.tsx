@@ -1,12 +1,9 @@
-
-'use client';
-import type {Metadata} from 'next';
+import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
-import { ThemeProvider } from 'next-themes';
 import { Inter, Source_Code_Pro } from 'next/font/google';
 import { cn } from '@/lib/utils';
-import { SmoothCursor } from '@/components/magicui/smooth-cursor';
+import { Providers } from '@/components/providers';
 
 const fontBody = Inter({
   subsets: ['latin'],
@@ -20,6 +17,14 @@ const fontCode = Source_Code_Pro({
   variable: '--font-code',
 });
 
+export const metadata: Metadata = {
+  title: 'PixelKliQ',
+  description: 'PixelKliQ offers cutting-edge digital solutions in Hyderabad, from creative design to tech development. Partner with us to elevate your brand.',
+  icons: {
+    icon: 'https://miro.medium.com/v2/resize:fit:356/format:webp/1*k-cMgo-BIeSv46lXogrEPQ.png',
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -28,21 +33,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <title>PixelKliQ</title>
-        <meta name="description" content="PixelKliQ offers cutting-edge digital solutions in Hyderabad, from creative design to tech development. Partner with us to elevate your brand." />
-        <link rel="icon" href="https://miro.medium.com/v2/resize:fit:356/format:webp/1*k-cMgo-BIeSv46lXogrEPQ.png" type="image/png" sizes="any" />
       </head>
       <body className={cn("font-body antialiased", fontBody.variable, fontCode.variable)}>
-        <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-        >
-            <SmoothCursor />
+        <Providers>
             {children}
             <Toaster />
-        </ThemeProvider>
+        </Providers>
       </body>
     </html>
   );
