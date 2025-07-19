@@ -40,15 +40,6 @@ const nextConfig = {
       }
     ],
   },
-  webpack: (config, { isServer }) => {
-    // This rule will cause webpack to ignore the favicon.ico file.
-    config.module.rules.push({
-      test: /favicon\.ico$/,
-      loader: 'null-loader',
-    });
-
-    return config;
-  },
 };
 
 module.exports = nextConfig;
