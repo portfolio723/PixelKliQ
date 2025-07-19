@@ -5,7 +5,7 @@ import type { ComponentProps, ReactNode } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
-import { Mail, Phone, Youtube, Facebook, Instagram, Linkedin, Heart } from 'lucide-react';
+import { Mail, Phone, Youtube, Facebook, Instagram, Linkedin } from 'lucide-react';
 
 interface FooterLink {
 	title: string;
