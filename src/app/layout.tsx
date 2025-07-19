@@ -30,6 +30,7 @@ export default function RootLayout({
       <head>
         <title>PixelKliQ</title>
         <meta name="description" content="PixelKliQ offers cutting-edge digital solutions in Hyderabad, from creative design to tech development. Partner with us to elevate your brand." />
+        <link rel="icon" href="https://miro.medium.com/v2/resize:fit:356/format:webp/1*k-cMgo-BIeSv46lXogrEPQ.png" type="image/png" sizes="any" />
       </head>
       <body className={cn("font-body antialiased", fontBody.variable, fontCode.variable)}>
         <ThemeProvider
