@@ -1,3 +1,12 @@
+# See https://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
+#
+# To allow all crawlers to access all parts of the site, use:
 User-agent: *
 Allow: /
-Sitemap: https://www.pixelkliq.com/sitemap.xml
+
+# To disallow all crawlers from accessing the site, use:
+# User-agent: *
+# Disallow: /
+
+# Point crawlers to the sitemap
+Sitemap: /sitemap.xml
