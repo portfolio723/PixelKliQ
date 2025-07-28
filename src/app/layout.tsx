@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="https://miro.medium.com/v2/resize:fit:356/format:webp/1*k-cMgo-BIeSv46lXogrEPQ.png" />
+        <link rel="icon" href="/logo-01 1.png" />
       </head>
       <body className={cn("font-body antialiased", fontBody.variable, fontCode.variable)}>
         <Providers>
